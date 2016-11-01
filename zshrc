@@ -1,0 +1,109 @@
+ZSH=~/.oh-my-zsh
+ZSH_THEME="robbyrussell" # check ~/.oh-my-zsh/themes/ or "random"
+DEFAULT_USER="ben"
+COMPLETION_WAITING_DOTS="true"
+HIST_STAMPS="mm/dd/yyyy" # history
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(
+	adb
+	archlinux
+	colored-man-pages
+	cp
+	extract
+	git
+	github
+	sudo
+	web-search
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# User configuration
+
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$ANDROID_HOME/platform-tools:$HOME/.gem/ruby/2.3.0/bin/:$PATH"
+export MANPATH="/usr/local/man:$MANPATH"
+export EDITOR='nvim'
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+alias df="dfc -d"
+alias 4chandl='wget -P pics -H -nd -r -Di.4cdn.org -A ".jpg,.jpeg,.png,.gif," -erobots=off'
+alias anonubuntu="docker run -it --rm ubuntu:latest /bin/bash"
+alias open=open_command
+alias bzrdiff='bzr diff | colordiff | less'
+alias sys=systemctl
+alias yt=youtube
+alias vim=nvim
+alias dog='pygmentize -g'
+
+alias mv='mv -i'
+alias cp='cp -i'
+
+function cleanmem () {
+	sudo sysctl -w vm.drop_caches=3
+	sudo swapoff -a
+	sudo swapon -a
+}
+
+# disable wifi power managment for laptop
+alias nopwm='sudo iw dev wlp2s0 set power_save off'
+# reload wifi module for desktop
+function reloadwifi () {
+	sudo rmmod rt2800pci && sudo modprobe rt2800pci
+}
+
+export GREP_COLORS="1;33"
+
+function cdl() {
+    cd "$@" && ls
+}
+
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
+export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
+
+fortune -o -s
+
+function darkTitleBar() {
+    xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT dark
+}
+
+alias clip="xsel --clipboard"
+
+function usb-status() {
+    fmt="%-10s %-54s %-4s %-10s %-10s\n"
+
+    printf "$fmt" "ID" "DEVICE" "AUTO" "RUNTIME" "STATUS"
+
+    for dev in /sys/bus/usb/devices/*; do
+        if ! test -e $dev/power/autosuspend; then
+            continue
+        fi
+
+        { manu=$(< $dev/manufacturer) || manu="(unknown)"
+          prod=$(< $dev/product) || prod="${dev#/sys/bus/usb/devices/}"
+        } 2> /dev/null
+
+        autosusp=$(< $dev/power/autosuspend)
+        rstat=$(< $dev/power/runtime_status)
+        renab=$(< $dev/power/runtime_enabled)
+
+        manu=${manu//"$(uname -sr)"/"$(uname -s)"}
+
+        printf "$fmt" "${dev##*/}" "$manu $prod" "$autosusp" "${renab:0:10}" "${rstat:0:10}"
+    done
+}

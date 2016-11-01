@@ -32,6 +32,8 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$ANDROID_HOME/platform-tools:$HOME/.gem/ruby/2.3.0/bin/:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='nvim'
+export GREP_COLORS="1;33"
+export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -44,45 +46,26 @@ alias 4chandl='wget -P pics -H -nd -r -Di.4cdn.org -A ".jpg,.jpeg,.png,.gif," -e
 alias anonubuntu="docker run -it --rm ubuntu:latest /bin/bash"
 alias open=open_command
 alias bzrdiff='bzr diff | colordiff | less'
-alias sys=systemctl
 alias yt=youtube
 alias vim=nvim
 alias dog='pygmentize -g'
-
+alias clip="xsel --clipboard"
 alias mv='mv -i'
 alias cp='cp -i'
+
+# disable wifi power managment for laptop
+alias nopwm='sudo iw dev wlp2s0 set power_save off'
+
+# reload wifi module for desktop
+function reloadwifi () {
+	sudo rmmod rt2800pci && sudo modprobe rt2800pci
+}
 
 function cleanmem () {
 	sudo sysctl -w vm.drop_caches=3
 	sudo swapoff -a
 	sudo swapon -a
 }
-
-# disable wifi power managment for laptop
-alias nopwm='sudo iw dev wlp2s0 set power_save off'
-# reload wifi module for desktop
-function reloadwifi () {
-	sudo rmmod rt2800pci && sudo modprobe rt2800pci
-}
-
-export GREP_COLORS="1;33"
-
-function cdl() {
-    cd "$@" && ls
-}
-
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
-export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
-
-fortune -o -s
-
-function darkTitleBar() {
-    xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT dark
-}
-
-alias clip="xsel --clipboard"
 
 function usb-status() {
     fmt="%-10s %-54s %-4s %-10s %-10s\n"
@@ -107,3 +90,6 @@ function usb-status() {
         printf "$fmt" "${dev##*/}" "$manu $prod" "$autosusp" "${renab:0:10}" "${rstat:0:10}"
     done
 }
+
+# print a short, offsensive quote
+fortune -o -s

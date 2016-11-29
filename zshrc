@@ -23,7 +23,7 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # User configuration
 
-export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$ANDROID_HOME/platform-tools:$HOME/.gem/ruby/2.3.0/bin/:$PATH"
+export PATH="$HOME/.local/bin:/usr/local/bin:$ANDROID_HOME/platform-tools:$HOME/.gem/ruby/2.3.0/bin/:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='nvim'
 export GREP_COLORS="1;33"

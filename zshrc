@@ -26,6 +26,7 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 export PATH="$HOME/.local/bin:/usr/local/bin:$ANDROID_HOME/platform-tools:$HOME/.gem/ruby/2.3.0/bin/:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='nvim'
+export BROWSER='firefox-developer'
 export GREP_COLORS="1;33"
 export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
 

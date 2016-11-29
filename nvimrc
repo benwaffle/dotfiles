@@ -32,6 +32,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'arrufat/vala.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'neomake/neomake'
+Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
+    \ }
 
 call plug#end()
 

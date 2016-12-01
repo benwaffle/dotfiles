@@ -7,6 +7,8 @@ set showcmd " show mode
 
 set cursorline " highlight the current line
 
+set hlsearch
+
 set smarttab
 set expandtab
 set tabstop=4
@@ -29,9 +31,10 @@ call plug#begin('~/.config/nvim/plugs')
 
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree'
-Plug 'arrufat/vala.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'arrufat/vala.vim'
 Plug 'neomake/neomake'
+Plug 'bling/vim-airline'
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
     \ }
@@ -49,3 +52,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " run neomake on write
 autocmd! BufWritePost * Neomake
+
+let g:airline_powerline_fonts = 1

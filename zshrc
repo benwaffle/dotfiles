@@ -25,7 +25,6 @@ source /etc/profile.d/lesspipe.sh
 # User configuration
 
 export PATH="$HOME/.local/bin:/usr/local/bin:$ANDROID_HOME/platform-tools:$HOME/.gem/ruby/2.3.0/bin/:$PATH"
-export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='nvim'
 export BROWSER='firefox-developer'
 export GREP_COLORS="1;33"

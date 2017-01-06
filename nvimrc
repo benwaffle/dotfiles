@@ -11,9 +11,9 @@ set hlsearch
 
 set smarttab
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
 
 set ruler " show row/column
 set scrolloff=1 " always show one line below/above your cursor
@@ -35,6 +35,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'arrufat/vala.vim'
 Plug 'neomake/neomake'
 Plug 'bling/vim-airline'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
     \ }

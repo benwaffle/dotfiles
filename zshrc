@@ -20,6 +20,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/doc/pkgfile/command-not-found.zsh
+source /etc/profile.d/lesspipe.sh
 
 # User configuration
 

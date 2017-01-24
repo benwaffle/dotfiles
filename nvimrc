@@ -36,6 +36,7 @@ Plug 'arrufat/vala.vim'
 Plug 'neomake/neomake'
 Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'wlangstroth/vim-racket'
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
     \ }

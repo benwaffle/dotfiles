@@ -28,7 +28,7 @@ export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:/usr/local/bin:$ANDROID_HOME
 export EDITOR='nvim'
 export BROWSER='firefox-developer'
 export GREP_COLORS="1;33"
-export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
+#export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

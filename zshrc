@@ -87,7 +87,5 @@ function usb-status() {
     done
 }
 
-# print a short, offsensive quote
-fortune -o -s
 endtime=$(date "+%s.%N")
 echo init took $(( ($endtime - $starttime) * 1000 ))ms

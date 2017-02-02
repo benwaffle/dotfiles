@@ -13,5 +13,5 @@ function die {
 
 cp $1 /tmp
 cd /tmp
-firejail --seccomp --private javaws /tmp/$(basename $1)
+firejail --seccomp --private=/tmp/home javaws /tmp/$(basename $1)
 rm /tmp/$(basename $1)

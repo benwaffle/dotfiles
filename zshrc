@@ -1,3 +1,4 @@
+starttime=$(date "+%s.%N")
 ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell" # check ~/.oh-my-zsh/themes/ or "random"
 DEFAULT_USER="ben"
@@ -88,3 +89,5 @@ function usb-status() {
 
 # print a short, offsensive quote
 fortune -o -s
+endtime=$(date "+%s.%N")
+echo init took $(( ($endtime - $starttime) * 1000 ))ms

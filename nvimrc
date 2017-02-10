@@ -11,9 +11,9 @@ set hlsearch
 
 set smarttab
 set expandtab
-set tabstop=8
-set softtabstop=8
-set shiftwidth=8
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 set ruler " show row/column
 set scrolloff=1 " always show one line below/above your cursor

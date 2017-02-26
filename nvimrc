@@ -15,6 +15,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+set foldlevel=999 " start with all folds expanded
+
 set ruler " show row/column
 set scrolloff=1 " always show one line below/above your cursor
 " set nocompatible

@@ -1,3 +1,4 @@
+# vim: set sw=4 et:
 starttime=$(date "+%s.%N")
 ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell" # check ~/.oh-my-zsh/themes/ or "random"

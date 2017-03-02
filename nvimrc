@@ -43,6 +43,10 @@ Plug 'yanqd0/nginx.vim'
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
     \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-clang'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'poppyschmo/deoplete-latex'
 
 call plug#end()
 
@@ -59,3 +63,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd! BufWritePost * Neomake
 
 let g:airline_powerline_fonts = 1
+let g:deoplete#enable_at_startup = 1

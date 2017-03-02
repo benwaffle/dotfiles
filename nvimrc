@@ -28,27 +28,27 @@ set undodir=~/.config/nvim/undodir//
 " vim-plug
 call plug#begin('~/.config/nvim/plugs')
 
-Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'neomake/neomake'
-Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'flazz/vim-colorschemes' " colorschemes
+Plug 'scrooloose/nerdtree' " sidebar tree
+Plug 'Xuyuanp/nerdtree-git-plugin' " sidebar tree git support
+Plug 'neomake/neomake' " code checkers for many languages
+Plug 'vim-airline/vim-airline' " pretty status bar
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
-    \ }
+    \ } " file browser
 
 " language support
-Plug 'yanqd0/nginx.vim'
-Plug 'wlangstroth/vim-racket'
-Plug 'arrufat/vala.vim'
+Plug 'yanqd0/nginx.vim' " nginx conf
+Plug 'wlangstroth/vim-racket' " racket
+Plug 'arrufat/vala.vim' " vala
 
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'poppyschmo/deoplete-latex'
-Plug 'Shougo/neco-vim'
+Plug 'zchee/deoplete-clang' " C/C++
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript
+Plug 'poppyschmo/deoplete-latex' " latex
+Plug 'Shougo/neco-vim' " vimL
 
 call plug#end()
 
@@ -64,5 +64,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " run neomake on write
 autocmd! BufWritePost * Neomake
 
+" use unicode symbols for airline
 let g:airline_powerline_fonts = 1
+" enable deoplete autocompletion
 let g:deoplete#enable_at_startup = 1

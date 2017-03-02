@@ -28,7 +28,6 @@ set undodir=~/.config/nvim/undodir//
 " vim-plug
 call plug#begin('~/.config/nvim/plugs')
 
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'flazz/vim-colorschemes' " colorschemes
 Plug 'scrooloose/nerdtree' " sidebar tree
 Plug 'Xuyuanp/nerdtree-git-plugin' " sidebar tree git support

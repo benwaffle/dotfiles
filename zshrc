@@ -12,6 +12,7 @@ plugins=(
 	composer
 	colored-man-pages
 	cp
+	docker
 	extract
 	git
 	github

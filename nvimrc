@@ -47,6 +47,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'poppyschmo/deoplete-latex'
+Plug 'Shougo/neco-vim'
 
 call plug#end()
 

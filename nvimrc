@@ -31,15 +31,19 @@ call plug#begin('~/.config/nvim/plugs')
 Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'arrufat/vala.vim'
 Plug 'neomake/neomake'
 Plug 'bling/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'wlangstroth/vim-racket'
-Plug 'yanqd0/nginx.vim'
 Plug 'wincent/command-t', {
     \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
     \ }
+
+" language support
+Plug 'yanqd0/nginx.vim'
+Plug 'wlangstroth/vim-racket'
+Plug 'arrufat/vala.vim'
+
+" autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }

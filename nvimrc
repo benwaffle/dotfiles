@@ -42,6 +42,7 @@ Plug 'wincent/command-t', {
 Plug 'yanqd0/nginx.vim' " nginx conf
 Plug 'wlangstroth/vim-racket' " racket
 Plug 'arrufat/vala.vim' " vala
+Plug 'stfl/meson.vim' " meson
 
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

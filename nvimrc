@@ -1,4 +1,4 @@
-syntax on
+syntax on " syntax highlighting
 set number " show the line number
 set relativenumber " show relative line numbers
 set smartindent
@@ -46,10 +46,10 @@ Plug 'stfl/meson.vim' " meson
 
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang' " C/C++
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } " javascript
-Plug 'poppyschmo/deoplete-latex' " latex
-Plug 'Shougo/neco-vim' " vimL
+" Plug 'zchee/deoplete-clang'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'poppyschmo/deoplete-latex'
+Plug 'Shougo/neco-vim'
 
 call plug#end()
 

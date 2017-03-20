@@ -11,6 +11,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+set splitbelow " splitting a window will put it below
+set splitright " splitting a window will put it right
+
 set foldlevel=999 " start with all folds expanded
 
 set ruler " show row/column

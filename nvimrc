@@ -1,15 +1,11 @@
 syntax on
 set number " show the line number
 set relativenumber " show relative line numbers
-set autoindent
 set smartindent
 set showcmd " show mode
 
 set cursorline " highlight the current line
 
-set hlsearch
-
-set smarttab
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -19,14 +15,13 @@ set foldlevel=999 " start with all folds expanded
 
 set ruler " show row/column
 set scrolloff=1 " always show one line below/above your cursor
-" set nocompatible
+
 filetype plugin indent on
 
 " use pipe in insert mode, and block in normal mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 set undofile
-set undodir=~/.config/nvim/undodir//
 
 " vim-plug
 call plug#begin('~/.config/nvim/plugs')

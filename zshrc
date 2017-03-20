@@ -56,6 +56,10 @@ alias cp='cp -i'
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'
 
+function xdpi {
+    xrdb -merge <(echo Xft.dpi: $1)
+}
+
 # reload wifi module for desktop
 function reloadwifi () {
 	sudo rmmod rt2800pci && sudo modprobe rt2800pci

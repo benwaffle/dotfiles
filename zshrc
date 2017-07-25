@@ -9,14 +9,12 @@ HIST_STAMPS="mm/dd/yyyy" # history
 plugins=(
 	adb
 	archlinux
-	composer
 	colored-man-pages
 	cp
 	docker
 	extract
 	git
 	github
-	laravel5
 	sudo
 	web-search
 	zsh-autosuggestions

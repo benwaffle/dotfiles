@@ -8,7 +8,6 @@ HIST_STAMPS="mm/dd/yyyy" # history
 
 plugins=(
 	adb
-	archlinux
 	colored-man-pages
 	cp
 	docker

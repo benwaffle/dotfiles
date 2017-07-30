@@ -10,6 +10,7 @@ plugins=(
 	adb
 	colored-man-pages
 	cp
+	dnf
 	docker
 	extract
 	git

@@ -43,6 +43,7 @@ Plug 'yanqd0/nginx.vim' " nginx conf
 Plug 'wlangstroth/vim-racket' " racket
 Plug 'arrufat/vala.vim' " vala
 Plug 'igankevich/mesonic' " meson
+Plug 'leafgarland/typescript-vim' " typescript
 
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

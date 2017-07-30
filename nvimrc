@@ -47,7 +47,7 @@ Plug 'leafgarland/typescript-vim' " typescript
 
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-clang'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'poppyschmo/deoplete-latex'
 Plug 'Shougo/neco-vim'
@@ -70,3 +70,6 @@ autocmd! BufWritePost * Neomake
 let g:airline_powerline_fonts = 1
 " enable deoplete autocompletion
 let g:deoplete#enable_at_startup = 1
+
+let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'

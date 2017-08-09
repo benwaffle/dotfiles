@@ -21,11 +21,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme robbyrussell
 
-source /etc/profile.d/lesspipe.sh
 antigen apply
 
 ### end
 
+export LESSOPEN="|lesspipe.sh %s"
 source /etc/profile.d/autojump.sh
 export EDITOR='nvim'
 export BROWSER='firefox-developer'

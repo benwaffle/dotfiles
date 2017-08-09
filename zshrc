@@ -25,13 +25,22 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /etc/profile.d/lesspipe.sh
 source /etc/profile.d/autojump.sh
-
-# User configuration
-
-export PATH="$HOME/.npm-global/bin:$HOME/.local/bin:/usr/local/bin:$ANDROID_HOME/platform-tools:$HOME/.gem/ruby/2.4.0/bin/:$PATH"
 export EDITOR='nvim'
 export BROWSER='firefox-developer'
 export GREP_COLORS="1;33"
+
+export ANDROID_HOME="$HOME/Android/Sdk"
+
+path+=(
+    ~/.npm-global/bin
+    ~/.cargo/bin
+    ~/.local/bin
+    ~/dev/flutter/bin
+    ~/Android/Sdk/tools
+    ~/Android/Sdk/platform-tools
+)
+export PATH
+
 #export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
 
 # Compilation flags

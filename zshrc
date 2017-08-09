@@ -1,29 +1,32 @@
 # vim: set sw=4 et:
 starttime=$(date "+%s.%N")
-ZSH=~/.oh-my-zsh
-ZSH_THEME="robbyrussell" # check ~/.oh-my-zsh/themes/ or "random"
-DEFAULT_USER="ben"
-COMPLETION_WAITING_DOTS="true"
-HIST_STAMPS="mm/dd/yyyy" # history
 
-plugins=(
-	adb
-	colored-man-pages
-    command-not-found
-	cp
-	dnf
-	docker
-	extract
-	git
-	github
-	sudo
-	web-search
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-)
+### plugins
 
-source $ZSH/oh-my-zsh.sh
+source ~/dotfiles/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle adb
+antigen bundle colored-man-pages
+antigen bundle command-not-found
+antigen bundle dnf
+antigen bundle docker
+antigen bundle extract
+antigen bundle git
+antigen bundle github
+antigen bundle sudo
+
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme robbyrussell
+
 source /etc/profile.d/lesspipe.sh
+antigen apply
+
+### end
+
 source /etc/profile.d/autojump.sh
 export EDITOR='nvim'
 export BROWSER='firefox-developer'

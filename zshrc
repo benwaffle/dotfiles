@@ -66,44 +66,5 @@ alias cp='cp -i'
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'
 
-function xdpi {
-    xrdb -merge <(echo Xft.dpi: $1)
-}
-
-# reload wifi module for desktop
-function reloadwifi () {
-	sudo rmmod rt2800pci && sudo modprobe rt2800pci
-}
-
-function cleanmem () {
-	sudo sysctl -w vm.drop_caches=3
-	sudo swapoff -a
-	sudo swapon -a
-}
-
-function usb-status() {
-    fmt="%-10s %-54s %-4s %-10s %-10s\n"
-
-    printf "$fmt" "ID" "DEVICE" "AUTO" "RUNTIME" "STATUS"
-
-    for dev in /sys/bus/usb/devices/*; do
-        if ! test -e $dev/power/autosuspend; then
-            continue
-        fi
-
-        { manu=$(< $dev/manufacturer) || manu="(unknown)"
-          prod=$(< $dev/product) || prod="${dev#/sys/bus/usb/devices/}"
-        } 2> /dev/null
-
-        autosusp=$(< $dev/power/autosuspend)
-        rstat=$(< $dev/power/runtime_status)
-        renab=$(< $dev/power/runtime_enabled)
-
-        manu=${manu//"$(uname -sr)"/"$(uname -s)"}
-
-        printf "$fmt" "${dev##*/}" "$manu $prod" "$autosusp" "${renab:0:10}" "${rstat:0:10}"
-    done
-}
-
 transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
 tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }

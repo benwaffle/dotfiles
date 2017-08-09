@@ -9,6 +9,7 @@ HIST_STAMPS="mm/dd/yyyy" # history
 plugins=(
 	adb
 	colored-man-pages
+    command-not-found
 	cp
 	dnf
 	docker
@@ -22,7 +23,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/doc/pkgfile/command-not-found.zsh
 source /etc/profile.d/lesspipe.sh
 source /etc/profile.d/autojump.sh
 export EDITOR='nvim'

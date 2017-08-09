@@ -43,21 +43,9 @@ path+=(
 )
 export PATH
 
-#export MALLOC_PERTURB_=$(($RANDOM % 255 + 1))
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 alias df="dfc -d"
-alias 4chandl='wget -P pics -H -nd -r -Di.4cdn.org -A ".jpg,.jpeg,.png,.gif," -erobots=off'
-alias anonubuntu="docker run -it --rm ubuntu:latest /bin/bash"
 alias open=open_command
 alias bzrdiff='bzr diff | colordiff | less'
-alias yt=youtube
-alias vim=nvim
 alias dog='pygmentize -g'
 alias clip="xsel --clipboard"
 alias mv='mv -i'

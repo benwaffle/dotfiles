@@ -27,8 +27,8 @@ antigen apply
 ### end
 
 export LESSOPEN="|lesspipe.sh %s"
-export EDITOR='nvim'
-export BROWSER='firefox-developer'
+export EDITOR="nvim"
+export BROWSER="firefox-developer"
 export GREP_COLORS="1;33"
 
 export ANDROID_HOME="$HOME/Android/Sdk"

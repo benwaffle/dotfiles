@@ -7,6 +7,7 @@ source ~/dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle adb
+antigen bundle autojump
 antigen bundle colored-man-pages
 antigen bundle command-not-found
 antigen bundle dnf
@@ -26,7 +27,6 @@ antigen apply
 ### end
 
 export LESSOPEN="|lesspipe.sh %s"
-source /etc/profile.d/autojump.sh
 export EDITOR='nvim'
 export BROWSER='firefox-developer'
 export GREP_COLORS="1;33"

@@ -50,6 +50,8 @@ alias dog='pygmentize -g'
 alias clip="xsel --clipboard"
 alias mv='mv -i'
 alias cp='cp -i'
+alias rm='gio trash'
+alias gov='sudo cpupower frequency-set -g'
 
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'

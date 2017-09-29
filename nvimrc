@@ -1,4 +1,3 @@
-syntax on " syntax highlighting
 set number " show the line number
 set relativenumber " show relative line numbers
 set smartindent
@@ -18,8 +17,6 @@ set foldlevel=999 " start with all folds expanded
 
 set ruler " show row/column
 set scrolloff=1 " always show one line below/above your cursor
-
-filetype plugin indent on
 
 " use pipe in insert mode, and block in normal mode
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1

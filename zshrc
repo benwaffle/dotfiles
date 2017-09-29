@@ -20,7 +20,7 @@ antigen bundle sudo
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme robbyrussell
+antigen theme af-magic
 
 antigen apply
 

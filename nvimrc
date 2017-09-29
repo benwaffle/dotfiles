@@ -41,6 +41,7 @@ Plug 'wlangstroth/vim-racket' " racket
 Plug 'arrufat/vala.vim' " vala
 Plug 'igankevich/mesonic' " meson
 Plug 'leafgarland/typescript-vim' " typescript
+Plug 'cespare/vim-toml' " toml
 
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

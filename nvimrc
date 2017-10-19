@@ -33,9 +33,8 @@ Plug 'scrooloose/nerdtree' " sidebar tree
 Plug 'Xuyuanp/nerdtree-git-plugin' " sidebar tree git support
 Plug 'neomake/neomake' " code checkers for many languages
 Plug 'vim-airline/vim-airline' " pretty status bar
-Plug 'wincent/command-t', {
-    \   'do': 'cd ruby/command-t && ruby extconf.rb && make '
-    \ } " file browser
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " language support
 Plug 'yanqd0/nginx.vim' " nginx conf
@@ -55,6 +54,9 @@ Plug 'Shougo/neco-vim'
 call plug#end()
 
 colorscheme base
+
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
 
 " open nerdtree on start
 autocmd vimenter * NERDTree 

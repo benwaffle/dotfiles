@@ -54,7 +54,7 @@ Plug 'Shougo/neco-vim'
 
 call plug#end()
 
-colorscheme jellybeans
+colorscheme base
 
 " open nerdtree on start
 autocmd vimenter * NERDTree 

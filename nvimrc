@@ -24,6 +24,8 @@ set termguicolors
 
 set undofile
 
+set inccommand=nosplit " live preview for replace
+
 " vim-plug
 call plug#begin('~/.config/nvim/plugs')
 

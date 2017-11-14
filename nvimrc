@@ -46,6 +46,12 @@ Plug 'igankevich/mesonic' " meson
 Plug 'leafgarland/typescript-vim' " typescript
 Plug 'cespare/vim-toml' " toml
 
+" erlang
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-compiler'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'vim-erlang/vim-erlang-tags'
+
 " autocompletion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'

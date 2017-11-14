@@ -36,6 +36,7 @@ Plug 'neomake/neomake' " code checkers for many languages
 Plug 'vim-airline/vim-airline' " pretty status bar
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
 
 " language support
 Plug 'yanqd0/nginx.vim' " nginx conf
@@ -76,3 +77,5 @@ let g:airline_powerline_fonts = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#libclang_path = '/usr/lib64/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+
+let g:gitgutter_realtime = 0

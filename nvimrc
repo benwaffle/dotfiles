@@ -61,7 +61,8 @@ Plug 'Shougo/neco-vim'
 
 call plug#end()
 
-colorscheme base
+colorscheme Tomorrow-Night-Eighties
+highlight Comment cterm=italic
 
 nmap ; :Buffers<CR>
 nmap <Leader>t :Files<CR>

@@ -20,8 +20,7 @@ set scrolloff=1 " always show one line below/above your cursor
 
 set mouse=a " mouse support
 
-" use pipe in insert mode, and block in normal mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+set termguicolors
 
 set undofile
 

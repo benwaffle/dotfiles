@@ -30,7 +30,6 @@ antigen apply
 
 export LESSOPEN="|lesspipe.sh %s"
 export EDITOR="nvim"
-export BROWSER="firefox-developer"
 export GREP_COLORS="1;33"
 
 export ANDROID_HOME="$HOME/Android/Sdk"
@@ -47,12 +46,10 @@ export PATH
 
 alias df="dfc -d"
 alias open=open_command
-alias bzrdiff='bzr diff | colordiff | less'
 alias dog='pygmentize -g'
 alias clip="xsel --clipboard"
 alias mv='mv -i'
 alias cp='cp -i'
-alias rm='gio trash'
 alias gov='sudo cpupower frequency-set -g'
 
 # disable wifi power managment for laptop

@@ -60,4 +60,6 @@ tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | s
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+source /etc/profile.d/vte.sh
+
 [[ $DISTRO = 'arch' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh

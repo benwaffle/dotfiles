@@ -51,6 +51,7 @@ alias clip="xsel --clipboard"
 alias mv='mv -i'
 alias cp='cp -i'
 alias gov='sudo cpupower frequency-set -g'
+alias gdb='gdb -q'
 
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'

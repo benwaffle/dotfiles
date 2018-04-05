@@ -13,6 +13,7 @@ bindsym $mod+Shift+q kill
 
 # launcher
 bindsym $mod+d exec rofi -show run
+bindsym $mod+shift+d exec rofi -show window
 
 # change focus
 bindsym $mod+h focus left

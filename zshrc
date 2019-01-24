@@ -48,22 +48,24 @@ path+=(
 export PATH
 
 alias df="dfc -d"
-alias open=open_command
+alias ]=open_command
 alias dog='pygmentize -g'
 alias clip="xsel --clipboard"
 alias mv='mv -i'
 alias cp='cp -i'
 alias gov='sudo cpupower frequency-set -g'
 alias gdb='gdb -q'
+alias sys='sudo systemctl'
+alias usys='systemctl --user'
 
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'
 
-transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
 tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /etc/profile.d/vte.sh
+[ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
 [[ $DISTRO = 'arch' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh

@@ -71,3 +71,9 @@ tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | s
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
 [[ $DISTRO = 'arch' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+
+cat <<EOF
+Reminders:
+- whereis instead of which
+- nl prints file with line numbers
+EOF

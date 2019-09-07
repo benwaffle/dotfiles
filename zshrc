@@ -56,6 +56,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias gov='sudo cpupower frequency-set -g'
 alias gdb='gdb -q'
+alias pmb='./pmbootstrap.py --details-to-stdout'
 alias sys='sudo systemctl'
 alias usys='systemctl --user'
 

@@ -129,10 +129,10 @@ bindsym XF86WLAN exec bash -c '[[ $(nmcli r wifi) = "enabled" ]] && nmcli radio 
 bindsym $mod+x exec emacsclient -nc
 
 exec_always --no-startup-id sh ~/.screenlayout/multimonitor.sh
-exec_always feh --bg-scale Pictures/Wallpapers/a.png
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id compton
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always feh --bg-scale Pictures/Wallpapers/a.png
 exec dex -ae i3
 
 bindsym $mod+z exec --no-startup-id ~/.config/polybar/launch.sh

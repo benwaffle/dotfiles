@@ -131,7 +131,7 @@ bindsym $mod+x exec emacsclient -nc
 exec_always --no-startup-id sh ~/.screenlayout/multimonitor.sh
 exec_always feh --bg-scale Pictures/Wallpapers/a.png
 exec_always --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id compton --vsync opengl --paint-on-overlay
+exec --no-startup-id compton
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec nm-applet
 exec keepassxc

@@ -12,7 +12,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # launcher
-bindsym $mod+d exec rofi -combi-modi "run#drun" -show combi -modi combi
+bindsym $mod+d exec rofi -combi-modi "drun#run" -show combi -modi combi
 bindsym $mod+shift+d exec rofi -show window
 
 # change focus

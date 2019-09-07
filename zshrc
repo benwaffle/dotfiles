@@ -2,7 +2,7 @@
 
 ### plugins
 
-DISTRO=$(cat /etc/os-release | grep "ID=" | cut -d '=' -f 2)
+DISTRO=$(cat /etc/os-release | grep "^ID=" | cut -d '=' -f 2)
 
 source ~/dotfiles/antigen.zsh
 

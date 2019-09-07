@@ -44,6 +44,7 @@ path+=(
     ~/dev/flutter/bin
     ~/Android/Sdk/tools
     ~/Android/Sdk/platform-tools
+    ~/.gem/ruby/2.6.0/bin
 )
 export PATH
 

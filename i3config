@@ -133,10 +133,7 @@ exec_always feh --bg-scale Pictures/Wallpapers/a.png
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 exec --no-startup-id compton
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec nm-applet
-exec keepassxc
-exec nextcloud
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec dex -ae i3
 
 bindsym $mod+z exec --no-startup-id ~/.config/polybar/launch.sh
 

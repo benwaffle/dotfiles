@@ -1,6 +1,10 @@
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
+# add GNU sed to path
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+
 alias bup='brew update && brew upgrade && brew cask upgrade && brew cleanup'
 alias amm='amm --no-remote-logging -b ""'
 

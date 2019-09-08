@@ -13,10 +13,10 @@ source ~/dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 #antigen bundle adb
-[[ $DISTRO = 'arch' ]] && antigen bundle archlinux
+[[ $DISTRO == 'arch' ]] && antigen bundle archlinux
 antigen bundle autojump
 antigen bundle colored-man-pages
-[[ $DISTRO = 'arch' ]] && antigen bundle command-not-found
+[[ $DISTRO == 'arch' ]] && antigen bundle command-not-found
 antigen bundle docker
 antigen bundle extract
 antigen bundle fzf
@@ -41,8 +41,8 @@ antigen apply
 
 export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
-[[ $DISTRO = 'osx' ]] && export HOMEBREW_NO_ANALYTICS=1
-[[ $DISTRO = 'osx' ]] && export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+[[ $DISTRO == 'osx' ]] && export HOMEBREW_NO_ANALYTICS=1
+[[ $DISTRO == 'osx' ]] && export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
 path+=(
     ~/.cargo/bin
@@ -69,10 +69,21 @@ alias emacs='emacsclient -cn'
 alias nopwm='sudo iw dev wlp2s0 set power_save off'
 alias code=vscodium
 
-transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
-tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
+transfer() {
+    if [ $# -eq 0 ]; then
+        echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+        return 1
+    fi
+    tmpfile=$(mktemp -t transferXXX)
+    if tty -s; then
+        basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
+        curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >>$tmpfile
+    else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >>$tmpfile; fi
+    cat $tmpfile
+    rm -f $tmpfile
+}
 
-if [[ $DISTRO = 'arch' ]]; then
+if [[ $DISTRO == 'arch' ]]; then
     [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
     cat <<EOF
@@ -81,17 +92,17 @@ Reminders:
 - nl prints file with line numbers
 EOF
 
-    if [ -n "$DESKTOP_SESSION" ];then
+    if [ -n "$DESKTOP_SESSION" ]; then
         eval $(gnome-keyring-daemon --start)
         export SSH_AUTH_SOCK
     fi
 
-    function nycvpn {
+    function nycvpn() {
         nordvpn disconnect
         nordvpn connect US New_York
     }
 
-    function swvpn {
+    function swvpn() {
         nordvpn disconnect
         nordvpn connect Switzerland
     }

@@ -2,8 +2,11 @@
 
 ### plugins
 
-#DISTRO=$(cat /etc/os-release | grep "ID=" | cut -d '=' -f 2)
-DISTRO=osx
+if [ "$(uname -s)" = Darwin ]; then
+    DISTRO=osx
+else
+    DISTRO=$(grep "ID=" /etc/os-release | cut -d '=' -f 2)
+fi
 
 source ~/dotfiles/antigen.zsh
 

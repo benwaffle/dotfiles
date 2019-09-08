@@ -16,7 +16,7 @@ antigen use oh-my-zsh
 [[ $DISTRO = 'arch' ]] && antigen bundle archlinux
 antigen bundle autojump
 antigen bundle colored-man-pages
-#antigen bundle command-not-found
+[[ $DISTRO = 'arch' ]] && antigen bundle command-not-found
 antigen bundle docker
 antigen bundle extract
 antigen bundle fzf

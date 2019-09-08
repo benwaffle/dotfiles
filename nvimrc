@@ -64,7 +64,7 @@ call plug#end()
 colorscheme Tomorrow-Night-Eighties
 highlight Comment cterm=italic
 
-nmap ; :Buffers<CR>
+nmap <Leader>; :Buffers<CR>
 nmap <Leader>t :Files<CR>
 
 " open nerdtree on start

@@ -8,8 +8,8 @@ else
     OS=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
 
-[[ -a ~/.zsh_private ]] && source ~/.zsh_private
-[[ -a $DOTFILES/zsh/$OS.zsh ]] && source $DOTFILES/zsh/$OS.zsh
+[[ -a ~/.zsh_private ]] && source ~/.zsh_private # secrets that can't go on github should go in this file
+[[ -a $DOTFILES/zsh/$OS.zsh ]] && source $DOTFILES/zsh/$OS.zsh # OS-specific config should go in e.g. macos.zsh or arch.zsh
 
 ### plugins
 
@@ -17,11 +17,8 @@ source $DOTFILES/antigen.zsh
 
 antigen use oh-my-zsh
 
-#antigen bundle adb
-[[ $OS == 'arch' ]] && antigen bundle archlinux
 antigen bundle autojump
 antigen bundle colored-man-pages
-[[ $OS == 'arch' ]] && antigen bundle command-not-found
 antigen bundle docker
 antigen bundle extract
 antigen bundle fzf
@@ -46,8 +43,6 @@ antigen apply
 
 export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
-[[ $OS == 'macos' ]] && export HOMEBREW_NO_ANALYTICS=1
-[[ $OS == 'macos' ]] && export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
 path+=(
     ~/.cargo/bin
@@ -60,18 +55,10 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 alias df='dfc -d'
 alias open=open_command
-alias clip='xsel --clipboard'
 alias mv='mv -i'
 alias cp='cp -i'
-alias gov='sudo cpupower frequency-set -g'
 alias gdb='gdb -q'
-alias pmb='./pmbootstrap.py --details-to-stdout'
-alias sys='sudo systemctl'
-alias usys='systemctl --user'
 alias emacs='emacsclient -cn'
-
-# disable wifi power managment for laptop
-alias nopwm='sudo iw dev wlp2s0 set power_save off'
 alias code=vscodium
 
 transfer() {
@@ -88,52 +75,19 @@ transfer() {
     rm -f $tmpfile
 }
 
-if [[ $OS == 'arch' ]]; then
-    [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
-
-    cat <<EOF
-Reminders:
+cat <<EOF
+Tips:
 - whereis instead of which
-- nl prints file with line numbers
+- autojump (https://github.com/wting/autojump)
+- gss
+- alt+h opens man page
+- cd old new
 EOF
 
-    if [ -n "$DESKTOP_SESSION" ]; then
-        eval $(gnome-keyring-daemon --start)
-        export SSH_AUTH_SOCK
-    fi
+if [[ $OS == 'macos' ]]; then
 
-    function nycvpn() {
-        nordvpn disconnect
-        nordvpn connect US New_York
-    }
+    cat <<EOF
+- cmd+shift+o
+EOF
 
-    function swvpn() {
-        nordvpn disconnect
-        nordvpn connect Switzerland
-    }
-
-    alias myip='curl icanhazip.com'
-else
-    alias bup='brew update && brew upgrade && brew cask upgrade && brew cleanup'
-    alias amm='amm --no-remote-logging -b ""'
-
-    echo "Reminders:"
-    echo "- autojump"
-    echo "- gss"
-    echo "- alt+h opens man page"
-    echo "- cd old new"
-    echo "- alt+t"
-    echo "- cmd+shift+o"
-
-    [ -f /Users/ben/.travis/travis.sh ] && source /Users/ben/.travis/travis.sh
-
-    listening() {
-        if [ $# -eq 0 ]; then
-            sudo lsof -iTCP -sTCP:LISTEN -n -P
-        elif [ $# -eq 1 ]; then
-            sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color $1
-        else
-            echo "Usage: listening [pattern]"
-        fi
-    }
 fi

@@ -67,6 +67,7 @@ alias gdb='gdb -q'
 
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'
+alias code=vscodium
 
 [[ $DISTRO = 'arch' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 

@@ -19,6 +19,7 @@ antigen bundle colored-man-pages
 #antigen bundle command-not-found
 antigen bundle docker
 antigen bundle extract
+antigen bundle fzf
 antigen bundle git
 antigen bundle github
 antigen bundle sudo
@@ -66,8 +67,6 @@ alias gdb='gdb -q'
 
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ $DISTRO = 'arch' ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 

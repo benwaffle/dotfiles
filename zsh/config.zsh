@@ -8,14 +8,13 @@ else
     OS=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
 
+source $DOTFILES/antigen.zsh
+antigen use oh-my-zsh
+
 [[ -a ~/.zsh_private ]] && source ~/.zsh_private # secrets that can't go on github should go in this file
 [[ -a $DOTFILES/zsh/$OS.zsh ]] && source $DOTFILES/zsh/$OS.zsh # OS-specific config should go in e.g. macos.zsh or arch.zsh
 
 ### plugins
-
-source $DOTFILES/antigen.zsh
-
-antigen use oh-my-zsh
 
 antigen bundle autojump
 antigen bundle colored-man-pages

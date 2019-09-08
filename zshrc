@@ -91,5 +91,6 @@ echo "- gss"
 echo "- alt+h opens man page"
 echo "- cd old new"
 echo "- alt+t"
+echo "- cmd+shift+o"
 
 [ -f /Users/ben/.travis/travis.sh ] && source /Users/ben/.travis/travis.sh

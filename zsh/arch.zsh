@@ -26,5 +26,3 @@ function swvpn() {
     nordvpn disconnect
     nordvpn connect Switzerland
 }
-
-alias myip='curl icanhazip.com'

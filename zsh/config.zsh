@@ -59,6 +59,7 @@ alias cp='cp -i'
 alias gdb='gdb -q'
 alias emacs='emacsclient -cn'
 alias code=vscodium
+alias myip='curl icanhazip.com'
 
 transfer() {
     if [ $# -eq 0 ]; then

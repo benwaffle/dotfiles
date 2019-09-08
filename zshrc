@@ -63,13 +63,14 @@ export PATH
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
-alias df="dfc -d"
+alias df='dfc -d'
 alias open=open_command
-alias clip="xsel --clipboard"
+alias clip='xsel --clipboard'
 alias mv='mv -i'
 alias cp='cp -i'
 alias gov='sudo cpupower frequency-set -g'
 alias gdb='gdb -q'
+alias emacs='emacsclient -cn'
 
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'

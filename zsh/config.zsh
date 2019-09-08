@@ -1,22 +1,27 @@
 # vim: set sw=4 et:
 
+export DOTFILES=~/dotfiles
+
 if [ "$(uname -s)" = Darwin ]; then
-    DISTRO=osx
+    OS=macos
 else
-    DISTRO=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
+    OS=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
+
+[[ -a ~/.zsh_private ]] && source ~/.zsh_private
+[[ -a $DOTFILES/zsh/$OS.zsh ]] && source $DOTFILES/zsh/$OS.zsh
 
 ### plugins
 
-source ~/dotfiles/antigen.zsh
+source $DOTFILES/antigen.zsh
 
 antigen use oh-my-zsh
 
 #antigen bundle adb
-[[ $DISTRO == 'arch' ]] && antigen bundle archlinux
+[[ $OS == 'arch' ]] && antigen bundle archlinux
 antigen bundle autojump
 antigen bundle colored-man-pages
-[[ $DISTRO == 'arch' ]] && antigen bundle command-not-found
+[[ $OS == 'arch' ]] && antigen bundle command-not-found
 antigen bundle docker
 antigen bundle extract
 antigen bundle fzf
@@ -41,8 +46,8 @@ antigen apply
 
 export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
-[[ $DISTRO == 'osx' ]] && export HOMEBREW_NO_ANALYTICS=1
-[[ $DISTRO == 'osx' ]] && export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+[[ $OS == 'macos' ]] && export HOMEBREW_NO_ANALYTICS=1
+[[ $OS == 'macos' ]] && export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
 path+=(
     ~/.cargo/bin
@@ -83,7 +88,7 @@ transfer() {
     rm -f $tmpfile
 }
 
-if [[ $DISTRO == 'arch' ]]; then
+if [[ $OS == 'arch' ]]; then
     [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
     cat <<EOF
@@ -109,8 +114,6 @@ EOF
 
     alias myip='curl icanhazip.com'
 else
-    . ~/.zsh_private
-
     alias bup='brew update && brew upgrade && brew cask upgrade && brew cleanup'
     alias amm='amm --no-remote-logging -b ""'
 

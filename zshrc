@@ -61,6 +61,8 @@ path+=(
 )
 export PATH
 
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
 alias df="dfc -d"
 alias open=open_command
 alias clip="xsel --clipboard"

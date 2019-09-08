@@ -8,7 +8,7 @@ else
     OS=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
 
-source $DOTFILES/antigen.zsh
+source $DOTFILES/zsh/antigen.zsh
 antigen use oh-my-zsh
 
 [[ -a ~/.zsh_private ]] && source ~/.zsh_private # secrets that can't go on github should go in this file

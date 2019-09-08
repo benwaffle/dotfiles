@@ -47,13 +47,9 @@ export GOPATH=$(go env GOPATH)
 path+=(
     ~/.cargo/bin
     ~/.local/bin
-    ~/dev/flutter/bin
-    ~/Android/Sdk/tools
-    ~/Android/Sdk/platform-tools
     ~/.gem/ruby/2.6.0/bin
-    $GOPATH/bin
+    ${GOPATH//://bin:}/bin
     ~/dev/apibuilder-cli/bin
-    #/usr/local/opt/curl/bin
 )
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 

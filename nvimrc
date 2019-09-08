@@ -1,4 +1,3 @@
-set number " show the line number
 set relativenumber " show relative line numbers
 set smartindent
 set showcmd " show mode

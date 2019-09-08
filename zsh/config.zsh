@@ -59,7 +59,7 @@ cat <<EOF
 Tips:
 - whereis instead of which
 - autojump (https://github.com/wting/autojump)
-- gss
+- gsb
 - alt+h opens man page
 - cd old new
 EOF

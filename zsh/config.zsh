@@ -40,6 +40,8 @@ antigen apply
 
 ### end
 
+source $DOTFILES/zsh/aliases.zsh
+
 export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
 
@@ -51,15 +53,6 @@ path+=(
     ~/dev/apibuilder-cli/bin
 )
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-
-alias df='dfc -d'
-alias open=open_command
-alias mv='mv -i'
-alias cp='cp -i'
-alias gdb='gdb -q'
-alias emacs='emacsclient -cn'
-alias code=vscodium
-alias myip='curl icanhazip.com'
 
 cat <<EOF
 Tips:

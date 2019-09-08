@@ -73,7 +73,7 @@ alias nopwm='sudo iw dev wlp2s0 set power_save off'
 . ~/.zsh_private
 
 alias bup='brew update && brew upgrade && brew cask upgrade && brew cleanup'
-alias amm='amm --no-remote-logging'
+alias amm='amm --no-remote-logging -b ""'
 
 echo "Reminders:"
 echo "- autojump"

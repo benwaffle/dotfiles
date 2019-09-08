@@ -45,6 +45,7 @@ export GOPATH=$(go env GOPATH)
 export GOBIN=$GOPATH/bin
 export GREP_COLORS="1;33"
 export HOMEBREW_NO_ANALYTICS=1
+export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
 export ANDROID_HOME="$HOME/Android/Sdk"
 

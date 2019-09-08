@@ -1,12 +1,12 @@
 # vim: set sw=4 et:
 
-### plugins
-
 if [ "$(uname -s)" = Darwin ]; then
     DISTRO=osx
 else
     DISTRO=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
+
+### plugins
 
 source ~/dotfiles/antigen.zsh
 
@@ -39,15 +39,10 @@ antigen apply
 
 ### end
 
-export LESSOPEN="|lesspipe.sh %s"
-export EDITOR="nvim"
+export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
-export GOBIN=$GOPATH/bin
-export GREP_COLORS="1;33"
-export HOMEBREW_NO_ANALYTICS=1
-export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
-
-export ANDROID_HOME="$HOME/Android/Sdk"
+[[ $DISTRO = 'osx' ]] && export HOMEBREW_NO_ANALYTICS=1
+[[ $DISTRO = 'osx' ]] && export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
 path+=(
     ~/.cargo/bin

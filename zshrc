@@ -27,6 +27,9 @@ antigen bundle sudo
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+export YSU_MESSAGE_POSITION="after"
+antigen bundle MichaelAquilina/zsh-you-should-use
+
 export NVM_LAZY_LOAD=true # lazy load nvm
 antigen bundle lukechilds/zsh-nvm
 

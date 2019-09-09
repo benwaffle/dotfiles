@@ -1,7 +1,9 @@
+# vim: et:sw=4:ts=4
+
 [user]
-	name = Ben Iofel
+    name = Ben Iofel
 [commit]
-	gpgsign = true
+    gpgsign = true
 [core]
     exludesfiles = ~/dotfiles/git/gitignore
 [include]

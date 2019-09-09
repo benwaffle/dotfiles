@@ -1,0 +1,12 @@
+[user]
+	name = Ben Iofel
+[commit]
+	gpgsign = true
+[core]
+    exludesfiles = ~/dotfiles/git/gitignore
+[include]
+    path = ~/.gitconfig-local
+[protocol]
+    version = 2
+[url "git@github.com:"]
+    insteadof = https://github.com/

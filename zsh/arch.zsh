@@ -10,6 +10,8 @@ alias clip='xsel --clipboard'
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'
 
+path+=~/dev/flutter/bin
+
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
 if [ -n "$DESKTOP_SESSION" ]; then

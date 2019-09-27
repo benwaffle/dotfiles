@@ -45,12 +45,13 @@ source $DOTFILES/zsh/aliases.zsh
 
 export EDITOR='nvim'
 export GOPATH=$(go env GOPATH)
+export GOBIN="${GOPATH//://bin:}/bin"
 
 path=(
     ~/.cargo/bin
     ~/.local/bin
+    $GOBIN
     ~/.gem/ruby/2.6.0/bin
-    ${GOPATH//://bin:}/bin
     ~/dev/apibuilder-cli/bin
     $path
 )

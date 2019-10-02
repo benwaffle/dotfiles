@@ -65,11 +65,3 @@ Tips:
 - alt+h opens man page
 - cd old new
 EOF
-
-if [[ $OS == 'macos' ]]; then
-
-    cat <<EOF
-- cmd+shift+o
-EOF
-
-fi

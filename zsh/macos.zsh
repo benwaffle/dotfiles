@@ -10,6 +10,7 @@ alias bup='brew update && brew upgrade && brew cask upgrade && brew cleanup'
 alias amm='amm --no-remote-logging -b ""'
 
 [ -f /Users/ben/.travis/travis.sh ] && source /Users/ben/.travis/travis.sh
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 listening() {
     if [ $# -eq 0 ]; then

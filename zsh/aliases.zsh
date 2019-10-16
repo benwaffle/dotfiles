@@ -1,6 +1,7 @@
 alias cp='cp -i'
 alias df='dfc -d'
 alias mv='mv -i'
+alias ll='exa -l'
 
 alias emacs='emacsclient -cn'
 alias gdb='gdb -q'

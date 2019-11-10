@@ -86,3 +86,8 @@ inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
 inoremap jk <esc>
+
+augroup scala_sc
+  au!
+  autocmd BufNewFile,BufRead *.sc   set syntax=scala
+augroup END

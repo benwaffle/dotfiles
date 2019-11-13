@@ -6,12 +6,13 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 # add GNU sed to path
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
-alias -s app='open -a' # open .app files
+alias -s app='open -a' # run .app files just like executables
 
 alias bup='brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup'
 alias amm='amm --no-remote-logging -b ""'
 
 [ -f /Users/ben/.travis/travis.sh ] && source /Users/ben/.travis/travis.sh
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 listening() {

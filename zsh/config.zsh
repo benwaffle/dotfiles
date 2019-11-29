@@ -35,11 +35,11 @@ antigen bundle MichaelAquilina/zsh-you-should-use
 export NVM_LAZY_LOAD=true # lazy load nvm
 antigen bundle lukechilds/zsh-nvm
 
-antigen theme af-magic
-
 antigen apply
 
 ### end
+
+eval "$(starship init zsh)"
 
 source $DOTFILES/zsh/aliases.zsh
 

@@ -1,0 +1,38 @@
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[conda]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[hostname]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
+
+[python]
+disabled = true
+
+[ruby]
+disabled = true
+
+[rust]
+disabled = true
+
+[username]
+disabled = true

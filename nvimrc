@@ -1,4 +1,5 @@
 set relativenumber " show relative line numbers
+set number " show the current line number
 set smartindent
 set showcmd " show mode
 

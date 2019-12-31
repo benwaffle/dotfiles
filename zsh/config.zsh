@@ -39,8 +39,6 @@ antigen apply
 
 ### end
 
-eval "$(starship init zsh)"
-
 source $DOTFILES/zsh/aliases.zsh
 
 export EDITOR='nvim'
@@ -57,6 +55,8 @@ path=(
     $path
 )
 export PATH
+
+eval "$(starship init zsh)"
 
 cat <<EOF
 Tips:

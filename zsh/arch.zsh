@@ -14,6 +14,9 @@ path+=~/dev/flutter/bin
 
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
+export USE_CCACHE=1
+export CCACHE_COMPRESS=1
+
 if [ -n "$DESKTOP_SESSION" ]; then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK

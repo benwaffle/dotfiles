@@ -60,7 +60,6 @@ eval "$(starship init zsh)"
 
 cat <<EOF
 Tips:
-- whereis instead of which
 - autojump (https://github.com/wting/autojump)
 - gsb
 - alt+h opens man page

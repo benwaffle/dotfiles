@@ -2,8 +2,6 @@ alias cp='cp -i'
 alias df='dfc -d'
 alias mv='mv -i'
 
-alias rg='rg --hidden'
-
 alias ls='exa --git'
 alias ll='exa --git -lh'
 alias la='exa --git -lah'

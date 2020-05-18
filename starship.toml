@@ -14,7 +14,7 @@ disabled = true
 disabled = true
 
 [kubernetes]
-disabled = true
+disabled = false
 
 [nix_shell]
 disabled = true
@@ -35,4 +35,7 @@ disabled = true
 disabled = true
 
 [username]
+disabled = true
+
+[java]
 disabled = true

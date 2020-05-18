@@ -12,3 +12,4 @@ alias myip='curl -s https://iofel.me/ip'
 alias open=open_command
 
 alias gpr='hub pull-request --browse'
+alias gv='gh repo view --web'

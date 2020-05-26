@@ -11,9 +11,9 @@ alias -s app='open -a' # run .app files just like executables
 alias bup='brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup'
 alias amm='amm --no-remote-logging -b ""'
 
-[ -f /Users/ben/.travis/travis.sh ] && source /Users/ben/.travis/travis.sh
+[ -e ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -e ~/.iterm2_shell_integration.zsh ] && . ~/.iterm2_shell_integration.zsh
 
 [ -e ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
 

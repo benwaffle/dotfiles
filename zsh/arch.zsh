@@ -17,6 +17,9 @@ path+=~/dev/flutter/bin
 export USE_CCACHE=1
 export CCACHE_COMPRESS=1
 
+# TODO: what uses this?
+# export XKB_DEFAULT_OPTIONS=caps:swapescape
+
 if [ -n "$DESKTOP_SESSION" ]; then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK

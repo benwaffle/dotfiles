@@ -63,4 +63,5 @@ Tips:
 - autojump (https://github.com/wting/autojump)
 - gsb
 - alt+h opens man page
+- !$ last arg
 EOF

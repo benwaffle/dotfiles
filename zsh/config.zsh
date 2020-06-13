@@ -56,6 +56,7 @@ path=(
 )
 export PATH
 
+export STARSHIP_CONFIG=~/dotfiles/starship.toml
 eval "$(starship init zsh)"
 
 cat <<EOF

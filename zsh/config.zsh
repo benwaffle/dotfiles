@@ -56,6 +56,8 @@ path=(
 )
 export PATH
 
+export RIPGREP_CONFIG_PATH=~/dotfiles/ripgreprc
+
 export STARSHIP_CONFIG=~/dotfiles/starship.toml
 eval "$(starship init zsh)"
 

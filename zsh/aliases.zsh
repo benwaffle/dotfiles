@@ -16,3 +16,7 @@ alias ]=open_command
 
 alias gpr='hub pull-request --browse'
 alias gv='gh repo view --web'
+
+kpv() {
+    kgp -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " +  .metadata.labels["flow.io/version"]) | .[]'
+}

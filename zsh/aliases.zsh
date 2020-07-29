@@ -24,7 +24,7 @@ kpv() {
 
 fix-vscodium() {
     if [ $(uname) = Linux ]; then
-        sudo sed -i 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#'  /usr/share/vscodium-bin/resources/app/product.json
+        sudo sed -i 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#' /usr/share/vscodium-bin/resources/app/product.json
         echo 'updated /usr/share/vscodium-bin/resources/app/product.json'
     else
         echo unsupported OS

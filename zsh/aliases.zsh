@@ -20,3 +20,13 @@ alias gv='gh repo view --web'
 kpv() {
     kgp -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " +  .metadata.labels["flow.io/version"]) | .[]'
 }
+
+
+fix-vscodium() {
+    if [ $(uname) = Linux ]; then
+        sudo sed -i 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#'  /usr/share/vscodium-bin/resources/app/product.json
+        echo 'updated /usr/share/vscodium-bin/resources/app/product.json'
+    else
+        echo unsupported OS
+    fi
+}

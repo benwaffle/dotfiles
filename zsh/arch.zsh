@@ -6,6 +6,7 @@ alias pmb='./pmbootstrap.py --details-to-stdout'
 alias sys='sudo systemctl'
 alias usys='systemctl --user'
 alias clip='xsel --clipboard'
+alias ip='ip -color'
 
 # disable wifi power managment for laptop
 alias nopwm='sudo iw dev wlp2s0 set power_save off'

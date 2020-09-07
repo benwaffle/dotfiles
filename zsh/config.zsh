@@ -16,11 +16,11 @@ antigen use oh-my-zsh
 
 ### plugins
 
-antigen bundle autojump
 antigen bundle colored-man-pages
 antigen bundle docker
 antigen bundle extract
 antigen bundle kubectl
+antigen bundle fasd
 antigen bundle fzf
 antigen bundle git
 antigen bundle github

@@ -1,5 +1,5 @@
 alias cp='cp -i'
-alias df='dfc -d'
+alias df='duf'
 alias mv='mv -i'
 
 alias ls='exa --git'

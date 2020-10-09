@@ -1,6 +1,11 @@
 alias cp='cp -i'
-alias df='duf'
 alias mv='mv -i'
+
+if [[ $OS = 'macos' ]]; then
+    alias df='dfc'
+else
+    alias df='duf'
+fi
 
 alias ls='exa --git'
 alias ll='exa --git -lh'

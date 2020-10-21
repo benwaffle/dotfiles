@@ -10,7 +10,7 @@ alias -s app='open -a' # run .app files just like executables
 
 alias bup='brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup'
 alias amm='amm --no-remote-logging -b ""'
-alias sbtn='/usr/local/Cellar/sbt/1.4.0/libexec/bin/sbtn-x86_64-apple-darwin'
+alias sbtn='/usr/local/opt/sbt/libexec/bin/sbtn-x86_64-apple-darwin'
 
 [ -e ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 

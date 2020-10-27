@@ -38,3 +38,7 @@ fix-vscodium() {
         echo 'unsupported OS'
     fi
 }
+
+dhcp-leases() {
+  echo 'show ip dhcp binding; exit' | ssh admin@192.168.1.1  -oKexAlgorithms=+diffie-hellman-group1-sha1
+}

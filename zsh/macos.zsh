@@ -8,7 +8,7 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 alias -s app='open -a' # run .app files just like executables
 
-alias bup='brew update && brew upgrade && brew cask upgrade --greedy && brew cleanup'
+alias bup='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 alias amm='amm --no-remote-logging -b ""'
 alias sbtn='/usr/local/opt/sbt/libexec/bin/sbtn-x86_64-apple-darwin'
 

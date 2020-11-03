@@ -63,7 +63,7 @@ eval "$(starship init zsh)"
 
 cat <<EOF
 Tips:
-- autojump (https://github.com/wting/autojump)
+- fasd (https://github.com/clvv/fasd)
 - gsb
 - alt+h opens man page
 - !$ last arg

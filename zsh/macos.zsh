@@ -1,6 +1,7 @@
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
+unset JAVA_HOME
 export JAVA_HOME=$(/usr/libexec/java_home -v 14)
 
 # add GNU sed to path

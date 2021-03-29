@@ -30,7 +30,7 @@ set inccommand=nosplit " live preview for replace
 call plug#begin('~/.config/nvim/plugs')
 
 Plug 'flazz/vim-colorschemes' " colorschemes
-Plug 'scrooloose/nerdtree' " sidebar tree
+Plug 'preservim/nerdtree' " sidebar tree
 Plug 'Xuyuanp/nerdtree-git-plugin' " sidebar tree git support
 Plug 'neomake/neomake' " code checkers for many languages
 Plug 'vim-airline/vim-airline' " pretty status bar
@@ -61,12 +61,11 @@ highlight Comment cterm=italic
 nmap <Leader>; :Buffers<CR>
 nmap <Leader>t :Files<CR>
 
-" open nerdtree on start
-autocmd vimenter * NERDTree 
-" jump to main window
-autocmd VimEnter * wincmd p
+" open nerdtree on start and put cursor back in other window
+autocmd VimEnter * NERDTree | wincmd p
 " close nerdtree if it's the only window left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
 
 " run neomake on write
 autocmd! BufWritePost * Neomake

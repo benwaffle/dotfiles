@@ -39,3 +39,6 @@ disabled = true
 
 [java]
 disabled = true
+
+[scala]
+disabled = true

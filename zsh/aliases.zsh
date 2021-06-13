@@ -11,7 +11,7 @@ alias ls='exa --git'
 alias ll='exa --git -lh'
 alias la='exa --git -lah'
 
-alias emacs='emacsclient -cn'
+alias em='emacsclient -cn'
 alias gdb='gdb -q'
 alias myip='curl -s https://iofel.me/ip'
 alias isp='curl -s https://ipinfo.io | jq -r .org'
@@ -41,5 +41,5 @@ fix-vscodium() {
 }
 
 dhcp-leases() {
-  echo 'show ip dhcp binding; exit' | ssh admin@192.168.1.1  -oKexAlgorithms=+diffie-hellman-group1-sha1
+  echo 'show ip dhcp binding; exit' | sshpass -p$ROUTER_PASSWORD ssh admin@192.168.1.1 -oKexAlgorithms=+diffie-hellman-group1-sha1
 }

@@ -24,7 +24,7 @@ alias gv='gh repo view --web'
 alias gdm='git diff $(git_main_branch)'
 
 kpv() {
-    kgp -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " + .metadata.labels["flow.io/version"] + " " + .status.phase) | .[]'
+    kgp -n production -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " + .metadata.labels["flow.io/version"] + " " + .status.phase) | .[]'
 }
 
 

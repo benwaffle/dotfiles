@@ -11,7 +11,7 @@ alias ls='exa --git'
 alias ll='exa --git -lh'
 alias la='exa --git -lah'
 
-alias em='emacsclient -cn'
+alias em='emacsclient -n'
 alias gdb='gdb -q'
 alias myip='curl -s https://iofel.me/ip'
 alias isp='curl -s https://ipinfo.io | jq -r .org'

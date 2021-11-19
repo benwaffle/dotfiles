@@ -30,7 +30,7 @@ set inccommand=nosplit " live preview for replace
 call plug#begin('~/.config/nvim/plugs')
 
 Plug 'flazz/vim-colorschemes' " colorschemes
-Plug 'preservim/nerdtree' " sidebar tree
+Plug 'scrooloose/nerdtree' " sidebar tree
 Plug 'Xuyuanp/nerdtree-git-plugin' " sidebar tree git support
 Plug 'neomake/neomake' " code checkers for many languages
 Plug 'vim-airline/vim-airline' " pretty status bar

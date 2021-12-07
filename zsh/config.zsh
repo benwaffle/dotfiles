@@ -57,6 +57,8 @@ path=(
 )
 export PATH
 
+export LESS=-RXF
+
 export RIPGREP_CONFIG_PATH=~/dotfiles/ripgreprc
 
 export STARSHIP_CONFIG=~/dotfiles/starship.toml

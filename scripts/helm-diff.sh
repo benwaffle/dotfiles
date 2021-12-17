@@ -13,18 +13,11 @@ tmp=$(mktemp -d)
 
 pushd $tmp
 
-helm2 fetch $repo/$chart --version $oldv
-helm2 fetch $repo/$chart --version $newv
-
 mkdir $chart-$oldv
-pushd $chart-$oldv
-tar xvzf ../$chart-$oldv.tgz
-popd
-
 mkdir $chart-$newv
-pushd $chart-$newv
-tar xvzf ../$chart-$newv.tgz
-popd
+
+helm2 fetch $repo/$chart --version $oldv --untar --untardir $chart-$oldv
+helm2 fetch $repo/$chart --version $newv --untar --untardir $chart-$newv
 
 git diff $chart-$oldv $chart-$newv
 

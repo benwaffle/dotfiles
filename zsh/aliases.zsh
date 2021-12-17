@@ -22,6 +22,7 @@ alias ]=open_command
 alias gpr='hub pull-request --browse'
 alias gv='gh repo view --web'
 alias gdm='git diff $(git_main_branch)'
+alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%S%z"'
 
 kpv() {
     kgp -n production -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " + .metadata.labels["flow.io/version"] + " " + .status.phase) | .[]'

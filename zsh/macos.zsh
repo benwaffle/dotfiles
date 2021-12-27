@@ -11,7 +11,7 @@ alias -s app='open -a' # run .app files just like executables
 
 alias bup='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 alias amm='amm --no-remote-logging -b ""'
-alias stern='stern --exclude-container=istio-proxy --exclude _internal_/healthcheck'
+#alias stern='stern --exclude-container=istio-proxy --exclude _internal_/healthcheck'
 alias nodes="kgno -L 'role,node.kubernetes.io/instance-type,topology.kubernetes.io/zone'"
 
 [ -e ~/.travis/travis.sh ] && . ~/.travis/travis.sh

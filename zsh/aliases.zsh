@@ -11,7 +11,6 @@ alias ls='exa --git'
 alias ll='exa --git -lh'
 alias la='exa --git -lah'
 
-alias em='emacsclient -n'
 alias gdb='gdb -q'
 alias myip='curl -s https://iofel.me/ip'
 alias isp='curl -s https://ipinfo.io | jq -r .org'
@@ -28,6 +27,19 @@ kpv() {
     kgp -n production -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " + .metadata.labels["flow.io/version"] + " " + .status.phase) | .[]'
 }
 
+em() {
+    if [ "$#" -eq 0 ]
+    then
+        echo "Starting new Emacs process ..." >&2
+        open -a Emacs
+    elif emacsclient -n "$@" 2> /dev/null
+    then
+        echo "Opened $@ in Emacs server" >&2
+    else
+        echo "Opening $@ in a new Emacs process ..." >&2
+        open -a Emacs "$@"
+    fi
+}
 
 fix-vscodium() {
     if [ $(uname) = Linux ]; then

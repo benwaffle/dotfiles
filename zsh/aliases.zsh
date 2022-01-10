@@ -13,7 +13,7 @@ alias la='exa --git -lah'
 
 alias gdb='gdb -q'
 alias myip='curl -s https://iofel.me/ip'
-alias isp='curl -s https://ipinfo.io | jq -r .org'
+alias isp='curl -s https://ipinfo.io/org'
 
 alias open=open_command
 alias ]=open_command

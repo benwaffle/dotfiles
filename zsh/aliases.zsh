@@ -23,6 +23,13 @@ alias gv='gh repo view --web'
 alias gdm='git diff $(git_main_branch)'
 alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%S%z"'
 
+alias logs='stern --exclude _internal_/healthcheck --tail 20'
+
+hc() {
+    echo https://$1.api.flow.io/_internal_/healthcheck
+    curl -v https://$1.api.flow.io/_internal_/healthcheck
+}
+
 kpv() {
     kgp -n production -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " + .metadata.labels["flow.io/version"] + " " + .status.phase) | .[]'
 }

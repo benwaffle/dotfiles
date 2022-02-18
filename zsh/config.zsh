@@ -19,11 +19,11 @@ antigen use oh-my-zsh
 antigen bundle colored-man-pages
 antigen bundle docker
 antigen bundle extract
-antigen bundle kubectl
 antigen bundle fasd
 antigen bundle fzf
 antigen bundle git
 antigen bundle github
+antigen bundle kubectl
 antigen bundle sudo
 
 antigen bundle zsh-users/zsh-autosuggestions

@@ -31,7 +31,7 @@ hc() {
 }
 
 kpv() {
-    kgp -n production -l app=$1 -o json | jq -r '.items | map(.metadata.name + " => " + .metadata.labels["flow.io/version"] + " " + .status.phase) | .[]'
+    kgpl app=$1 -n production -L flow.io/version
 }
 
 em() {

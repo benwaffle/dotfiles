@@ -1,5 +1,12 @@
 # vim: set sw=4 et:
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export DOTFILES=~/dotfiles
 
 if [ "$(uname -s)" = Darwin ]; then
@@ -8,47 +15,66 @@ else
     OS=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
 
-source $DOTFILES/zsh/antigen.zsh
-antigen use oh-my-zsh
+zi_home="${HOME}/.zi"
+source "${zi_home}/bin/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+
+zi snippet OMZL::clipboard.zsh
+zi snippet OMZL::compfix.zsh
+zi snippet OMZL::completion.zsh
+zi snippet OMZL::correction.zsh
+zi snippet OMZL::directories.zsh
+zi snippet OMZL::functions.zsh
+zi snippet OMZL::git.zsh
+zi snippet OMZL::grep.zsh
+zi snippet OMZL::history.zsh
+zi snippet OMZL::key-bindings.zsh
+zi snippet OMZL::misc.zsh
+zi snippet OMZL::nvm.zsh
+zi snippet OMZL::prompt_info_functions.zsh
+zi snippet OMZL::spectrum.zsh
+zi snippet OMZL::termsupport.zsh
+zi snippet OMZL::theme-and-appearance.zsh
+zi snippet OMZL::vcs_info.zsh
 
 [[ -a ~/.zsh_private ]] && source ~/.zsh_private # secrets that can't go on github should go in this file
 [[ -a $DOTFILES/zsh/$OS.zsh ]] && source $DOTFILES/zsh/$OS.zsh # OS-specific config should go in e.g. macos.zsh or arch.zsh
 
-### plugins
+#### plugins
 
-antigen bundle colored-man-pages
-antigen bundle docker
-antigen bundle extract
-antigen bundle fasd
-antigen bundle fzf
-antigen bundle git
-antigen bundle github
-antigen bundle kubectl
-antigen bundle sudo
+zi snippet OMZP::colored-man-pages
+zi as"completion" for OMZP::docker/_docker
+zi snippet OMZP::extract
+zi snippet OMZP::fasd
+zi snippet OMZP::fzf
+zi snippet OMZP::git
+zi snippet OMZP::github
+zi snippet OMZP::kubectl
+zi snippet OMZP::sudo
 
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zdharma/fast-syntax-highlighting@main
+zi load zsh-users/zsh-autosuggestions
+zi load z-shell/fast-syntax-highlighting
 
 export YSU_MESSAGE_POSITION="after"
-antigen bundle MichaelAquilina/zsh-you-should-use
+zi load MichaelAquilina/zsh-you-should-use
 
 export NVM_LAZY_LOAD=true # lazy load nvm
-antigen bundle lukechilds/zsh-nvm
+zi light lukechilds/zsh-nvm
 
-antigen apply
+autoload -Uz compinit
+compinit
 
 ### end
 
 source $DOTFILES/zsh/aliases.zsh
 
 export EDITOR='nvim'
-export GOPATH=$(go env GOPATH)
-export GOBIN="${GOPATH//://bin:}/bin"
 
 path=(
     ~/.cargo/bin
     ~/.local/bin
-    $GOBIN
+    ~/go/bin
     ~/.gem/ruby/2.6.0/bin
     ~/dev/apibuilder-cli/bin
     /usr/local/sbin
@@ -61,13 +87,6 @@ export LESS=-RXF
 
 export RIPGREP_CONFIG_PATH=~/dotfiles/ripgreprc
 
-export STARSHIP_CONFIG=~/dotfiles/starship.toml
-eval "$(starship init zsh)"
-
-cat <<EOF
-Tips:
-- fasd (https://github.com/clvv/fasd)
-- gsb
-- alt+h opens man page
-- !$ last arg
-EOF
+zi ice depth=1
+zi light romkatv/powerlevel10k
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

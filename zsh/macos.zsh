@@ -11,13 +11,23 @@ alias -s app='open -a' # run .app files just like executables
 
 alias bup='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 #alias stern='stern --exclude-container=istio-proxy --exclude _internal_/healthcheck'
+alias logs='stern --exclude _internal_/healthcheck --tail 50'
 alias nodes="kgno -L 'role,node.kubernetes.io/instance-type,topology.kubernetes.io/zone'"
 
-[ -e ~/.travis/travis.sh ] && . ~/.travis/travis.sh
+hc() {
+    echo https://$1.api.flow.io/_internal_/healthcheck
+    curl -v https://$1.api.flow.io/_internal_/healthcheck
+}
+
+kpv() {
+    kgpl app=$1 -n production -L flow.io/version
+}
+
+# [ -e ~/.travis/travis.sh ] && . ~/.travis/travis.sh
 
 [ -e ~/.iterm2_shell_integration.zsh ] && . ~/.iterm2_shell_integration.zsh
 
-[ -e ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
+# [ -e ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
 
 listening() {
     if [ $# -eq 0 ]; then

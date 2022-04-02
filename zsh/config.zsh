@@ -65,7 +65,7 @@ compinit
 
 ### end
 
-source $DOTFILES/zsh/aliases.zsh
+source ~/dotfiles/zsh/aliases.zsh
 
 export EDITOR='nvim'
 

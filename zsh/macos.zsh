@@ -14,6 +14,9 @@ alias bup='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 alias logs='stern --exclude _internal_/healthcheck --tail 50'
 alias nodes="kgno -L 'role,node.kubernetes.io/instance-type,topology.kubernetes.io/zone'"
 
+alias helm3=/usr/local/bin/helm
+alias helm='echo specify helm2 or helm3 #'
+
 hc() {
     echo https://$1.api.flow.io/_internal_/healthcheck
     curl -v https://$1.api.flow.io/_internal_/healthcheck

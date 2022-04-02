@@ -7,8 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export DOTFILES=~/dotfiles
-
 if [ "$(uname -s)" = Darwin ]; then
     OS=macos
 else
@@ -39,9 +37,9 @@ zi snippet OMZL::theme-and-appearance.zsh
 zi snippet OMZL::vcs_info.zsh
 
 [[ -a ~/.zsh_private ]] && source ~/.zsh_private # secrets that can't go on github should go in this file
-[[ -a $DOTFILES/zsh/$OS.zsh ]] && source $DOTFILES/zsh/$OS.zsh # OS-specific config should go in e.g. macos.zsh or arch.zsh
+[[ -a ~/dotfiles/zsh/$OS.zsh ]] && source ~/dotfiles/zsh/$OS.zsh # OS-specific config should go in e.g. macos.zsh or arch.zsh
 
-#### plugins
+### plugins
 
 zi snippet OMZP::colored-man-pages
 zi as"completion" for OMZP::docker/_docker

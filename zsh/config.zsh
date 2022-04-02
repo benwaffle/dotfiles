@@ -29,9 +29,6 @@ zi snippet OMZL::grep.zsh
 zi snippet OMZL::history.zsh
 zi snippet OMZL::key-bindings.zsh
 zi snippet OMZL::misc.zsh
-zi snippet OMZL::nvm.zsh
-zi snippet OMZL::prompt_info_functions.zsh
-zi snippet OMZL::spectrum.zsh
 zi snippet OMZL::termsupport.zsh
 zi snippet OMZL::theme-and-appearance.zsh
 zi snippet OMZL::vcs_info.zsh
@@ -85,6 +82,5 @@ export LESS=-RXF
 
 export RIPGREP_CONFIG_PATH=~/dotfiles/ripgreprc
 
-zi ice depth=1
-zi light romkatv/powerlevel10k
+zi depth=1 for romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

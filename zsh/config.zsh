@@ -41,7 +41,6 @@ zi snippet OMZL::vcs_info.zsh
 zi snippet OMZP::colored-man-pages
 zi as"completion" for OMZP::docker/_docker
 zi snippet OMZP::extract
-zi snippet OMZP::fasd
 zi snippet OMZP::fzf
 zi snippet OMZP::git
 zi snippet OMZP::github
@@ -59,6 +58,8 @@ zi light lukechilds/zsh-nvm
 
 autoload -Uz compinit
 compinit
+
+eval "$(zoxide init --cmd j zsh)" # the default of "zi" is already used
 
 ### end
 

@@ -1,11 +1,10 @@
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
-unset JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home -v 14)
+eval $(cs java --env --jvm adoptium:1.17)
 
 # add GNU sed to path
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/Users/ben/Library/Application Support/Coursier/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 alias -s app='open -a' # run .app files just like executables
 

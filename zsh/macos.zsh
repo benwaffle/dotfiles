@@ -1,7 +1,7 @@
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
-eval $(cs java --env --jvm adoptium:1.17)
+eval $(cs java --env --jvm adopt:1.13)
 
 # add GNU sed to path
 export PATH="/Users/ben/Library/Application Support/Coursier/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"

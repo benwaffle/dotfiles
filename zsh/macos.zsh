@@ -11,7 +11,7 @@ alias -s app='open -a' # run .app files just like executables
 alias bup='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 #alias stern='stern --exclude-container=istio-proxy --exclude _internal_/healthcheck'
 alias logs='stern --exclude _internal_/healthcheck --tail 50'
-alias nodes="kgno -L 'role,node.kubernetes.io/instance-type,topology.kubernetes.io/zone'"
+alias nodes="kgno -L 'role,node.kubernetes.io/instance-type,topology.kubernetes.io/zone' --sort-by '{.metadata.creationTimestamp}'"
 
 alias helm3=/usr/local/bin/helm
 alias helm='echo specify helm2 or helm3 #'
@@ -22,7 +22,7 @@ hc() {
 }
 
 kpv() {
-    kgpl app=$1 -n production -L flow.io/version
+    kubectl get pods -l app=$1 -n production -L flow.io/version
 }
 
 # [ -e ~/.travis/travis.sh ] && . ~/.travis/travis.sh

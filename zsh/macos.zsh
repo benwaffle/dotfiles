@@ -16,6 +16,8 @@ alias nodes="kgno -L 'role,node.kubernetes.io/instance-type,topology.kubernetes.
 alias helm3=/usr/local/bin/helm
 alias helm='echo specify helm2 or helm3 #'
 
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
 hc() {
     echo https://$1.api.flow.io/_internal_/healthcheck
     curl -v https://$1.api.flow.io/_internal_/healthcheck

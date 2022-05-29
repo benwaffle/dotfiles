@@ -36,7 +36,7 @@ fix-vscodium() {
         sudo sed -i 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#' /usr/share/vscodium-bin/resources/app/product.json
         echo 'updated /usr/share/vscodium-bin/resources/app/product.json'
     elif [ $(uname) = Darwin ]; then
-        sed -i 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#' /Applications/VSCodium.app/Contents/Resources/app/product.json
+        sed -i "" 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#' /Applications/VSCodium.app/Contents/Resources/app/product.json
         echo 'updated /Applications/VSCodium.app/Contents/Resources/app/product.json'
     else
         echo 'unsupported OS'

@@ -1,7 +1,7 @@
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
-eval $(coursier java --env --jvm adoptium:1.17)
+eval $(coursier java --env --jvm zulu:13)
 
 # add GNU sed to path
 export PATH="/Users/ben/Library/Application Support/Coursier/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -13,7 +13,8 @@ alias bup='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 alias logs='stern --exclude _internal_/healthcheck --tail 50'
 alias nodes="kgno -L 'role,node.kubernetes.io/instance-type,topology.kubernetes.io/zone' --sort-by '{.metadata.creationTimestamp}'"
 
-alias helm3=/usr/local/bin/helm
+alias helm3=/opt/homebrew/opt/helm@3/bin/helm
+alias helm2=/opt/homebrew/opt/helm@2/bin/helm
 alias helm='echo specify helm2 or helm3 #'
 
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"

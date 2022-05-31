@@ -13,7 +13,7 @@ alias open=open_command
 alias ]=open_command
 
 alias gpr='hub pull-request --browse'
-alias gv='hub browse'
+alias gv='gh browse'
 alias gdm='git diff $(git_main_branch)'
 alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%S%z"'
 

@@ -1,2 +1,5 @@
 --max-columns=476
 --max-columns-preview
+--smart-case
+--hidden
+--glob=!.git/*

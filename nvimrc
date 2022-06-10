@@ -91,3 +91,11 @@ augroup scala_sc
   au!
   autocmd BufNewFile,BufRead *.sc   set syntax=scala
 augroup END
+
+
+let g:neovide_cursor_vfx_mode = "railgun"
+let g:neovide_input_use_logo = 1
+map <D-v> "+p<CR>
+map! <D-v> <C-R>+
+tmap <D-v> <C-R>+
+vmap <D-c> "+y<CR>

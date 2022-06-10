@@ -15,6 +15,7 @@ cask "lastpass"
 cask "nextcloud"
 cask "rectangle"
 cask "spotify"
+cask "todoist"
 cask "vscodium"
 cask "zoom"
 

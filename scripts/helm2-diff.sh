@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+function helm2 {
+    /opt/homebrew/opt/helm@2/bin/helm "$@"
+}
+
 set -euo pipefail
 
 [[ $# == 4 ]] || (echo 'need args'; exit 1)

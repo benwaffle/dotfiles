@@ -1,5 +1,6 @@
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+export GOPRIVATE=github.com/flowcommerce
 
 eval $(coursier java --env --jvm zulu:13)
 

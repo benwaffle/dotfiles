@@ -5,7 +5,7 @@ export GOPRIVATE=github.com/flowcommerce
 eval $(coursier java --env --jvm zulu:13)
 
 # add GNU sed to path
-export PATH="/Users/ben/Library/Application Support/Coursier/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/python@3/libexec/bin:/Users/ben/Library/Application Support/Coursier/bin:$PATH"
 
 alias -s app='open -a' # run .app files just like executables
 

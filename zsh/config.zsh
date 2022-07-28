@@ -59,6 +59,9 @@ zi light lukechilds/zsh-nvm
 autoload -Uz compinit
 compinit
 
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+
 eval "$(zoxide init --cmd j zsh)" # the default of "zi" is already used
 
 ### end

@@ -9,6 +9,8 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 
+(package! jenkinsfile-mode)
+
 ;; Install `plz' HTTP library (not on MELPA yet).
 (package! plz
   :recipe (:host github :repo "alphapapa/plz.el"))

@@ -88,3 +88,5 @@ export RIPGREP_CONFIG_PATH=~/dotfiles/ripgreprc
 
 zi depth=1 for romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(direnv hook zsh)"

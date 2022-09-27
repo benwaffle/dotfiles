@@ -46,6 +46,8 @@ Plug 'igankevich/mesonic' " meson
 Plug 'leafgarland/typescript-vim' " typescript
 Plug 'cespare/vim-toml' " toml
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " autocompletion
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-clang'

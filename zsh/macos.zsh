@@ -20,6 +20,8 @@ alias helm='echo specify helm2 or helm3 #'
 
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+alias nvim=neovide
+
 hc() {
     echo https://$1.api.flow.io/_internal_/healthcheck
     curl -v https://$1.api.flow.io/_internal_/healthcheck

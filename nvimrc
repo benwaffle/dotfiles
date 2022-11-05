@@ -97,6 +97,7 @@ augroup END
 
 let g:neovide_cursor_vfx_mode = "railgun"
 let g:neovide_input_use_logo = 1
+let g:neovide_remember_window_size = v:true
 map <D-v> "+p<CR>
 map! <D-v> <C-R>+
 tmap <D-v> <C-R>+

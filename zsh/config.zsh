@@ -13,6 +13,9 @@ else
     OS=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
 
+# $ZSH_CACHE_DIR is expected by the kubectl snippet
+export ZSH_CACHE_DIR=$HOME/.cache/zi/
+
 zi_home="${HOME}/.zi"
 source "${zi_home}/bin/zi.zsh"
 autoload -Uz _zi
@@ -46,9 +49,10 @@ zi snippet OMZP::git
 zi snippet OMZP::github
 zi snippet OMZP::kubectl
 zi snippet OMZP::sudo
+zi snippet OMZP::terraform
 
 zi load zsh-users/zsh-autosuggestions
-zi load z-shell/fast-syntax-highlighting
+zi load z-shell/F-Sy-H
 
 export YSU_MESSAGE_POSITION="after"
 zi load MichaelAquilina/zsh-you-should-use

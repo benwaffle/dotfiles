@@ -2,6 +2,8 @@ export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 export GOPRIVATE=github.com/flowcommerce
 
+zi wait pack for brew-completions
+
 eval $(coursier java --env --jvm zulu:13)
 
 # add GNU sed to path

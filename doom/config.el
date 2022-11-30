@@ -57,3 +57,5 @@
 (add-hook 'window-setup-hook #'treemacs 'append) ;; open treemacs on startup
 
 (setq which-key-idle-delay 0.2) ;; show shortcut autocompletion menu after 0.1sec
+
+(setq projectile-project-search-path '("~/dev")) ;; where all my projects go

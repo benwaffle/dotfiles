@@ -25,6 +25,6 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
-      defaultPackage.aarch64-darwin = home-manager.defaultPackage.aarch64-darwin;
+      packages.aarch64-darwin.default = home-manager.defaultPackage.aarch64-darwin;
     };
 }

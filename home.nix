@@ -7,8 +7,14 @@
   home.homeDirectory = "/Users/ben";
 
   home.packages = [
-    pkgs.cowsay
+    pkgs.neovim
   ];
+
+  programs.git = {
+    enable = true;
+    userName = "Ben Iofel";
+    delta.enable = true;
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -10,19 +10,23 @@
     pkgs.bat
     pkgs.clang
     pkgs.direnv
-    pkgs.emacs
+    pkgs.duf
     pkgs.exa
     pkgs.fd
     pkgs.fzf
+    pkgs.gh
     pkgs.htop
+    pkgs.jq
     pkgs.neovim
     pkgs.ripgrep
+    pkgs.tree
     pkgs.zoxide
   ];
 
   programs.git = {
     enable = true;
     userName = "Ben Iofel";
+    userEmail = "ben@iofel.me";
     delta.enable = true;
   };
 

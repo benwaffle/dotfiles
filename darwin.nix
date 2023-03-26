@@ -13,19 +13,31 @@
   homebrew = {
     enable = true;
 
+    taps = [
+      "railwaycat/emacsmacport"
+    ];
+
     casks = [
+      "1password"
       "discord"
+      "element"
+      "emacs-mac"
       "firefox"
+      "gimp"
+      "iterm2"
+      "itsycal"
       "keepassxc"
       "nextcloud"
-      "spotify"
-      "iterm2"
-      "element"
       "rectangle"
+      "spotify"
+      "todoist"
+      "vscodium"
+      "zoom"
     ];
 
     masApps = {
       "tailscale" = 1475387142;
+      "meeter" = 1510445899;
     };
   };
 }

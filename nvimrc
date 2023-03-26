@@ -20,7 +20,7 @@ set scrolloff=1 " always show one line below/above your cursor
 
 set mouse=a " mouse support
 
-set termguicolors
+" set termguicolors
 
 set undofile
 

@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    darwin = {
+      url = "github:lnl7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, darwin, home-manager, ... }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -24,6 +28,10 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+      };
+      darwinConfigurations."BenIofels16MBP" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [ ./darwin.nix ];
       };
       packages.aarch64-darwin.default = home-manager.defaultPackage.aarch64-darwin;
     };

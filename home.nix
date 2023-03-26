@@ -7,7 +7,17 @@
   home.homeDirectory = "/Users/ben";
 
   home.packages = [
+    pkgs.bat
+    pkgs.clang
+    pkgs.direnv
+    pkgs.emacs
+    pkgs.exa
+    pkgs.fd
+    pkgs.fzf
+    pkgs.htop
     pkgs.neovim
+    pkgs.ripgrep
+    pkgs.zoxide
   ];
 
   programs.git = {

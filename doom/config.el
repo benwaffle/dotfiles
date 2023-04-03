@@ -59,3 +59,12 @@
 (setq which-key-idle-delay 0.2) ;; show shortcut autocompletion menu after 0.1sec
 
 (setq projectile-project-search-path '("~/dev")) ;; where all my projects go
+
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))

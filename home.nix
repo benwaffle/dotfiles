@@ -10,6 +10,7 @@
     pkgs.bat
     pkgs.clang
     pkgs.direnv
+    pkgs.dogdns
     pkgs.duf
     pkgs.exa
     pkgs.fd

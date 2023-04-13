@@ -30,6 +30,9 @@
     userName = "Ben Iofel";
     userEmail = "ben@iofel.me";
     delta.enable = true;
+    extraConfig = {
+      pull.rebase = true;
+    };
   };
 
   # This value determines the Home Manager release that your

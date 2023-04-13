@@ -13,10 +13,12 @@
     pkgs.duf
     pkgs.exa
     pkgs.fd
+    pkgs.flyctl
     pkgs.fzf
     pkgs.gh
     pkgs.htop
     pkgs.jq
+    pkgs.ncdu
     pkgs.neovim
     pkgs.ripgrep
     pkgs.tree

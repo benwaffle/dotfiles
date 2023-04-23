@@ -19,6 +19,7 @@
     pkgs.gh
     pkgs.htop
     pkgs.jq
+    pkgs.mpv
     pkgs.ncdu
     pkgs.neovim
     pkgs.ripgrep

@@ -27,6 +27,7 @@
       "iterm2"
       "itsycal"
       "keepassxc"
+      "mullvadvpn"
       "nextcloud"
       "rectangle"
       "slack"

@@ -24,6 +24,8 @@
     pkgs.neovim
     pkgs.ripgrep
     pkgs.tree
+    pkgs.watch
+    pkgs.yt-dlp
     pkgs.zoxide
   ];
 

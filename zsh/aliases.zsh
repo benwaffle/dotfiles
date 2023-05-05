@@ -31,6 +31,15 @@ em() {
     fi
 }
 
+fix-code-oss() {
+    if [ $(uname) = Linux ]; then
+        sudo sed -i 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#' /usr/lib/code/product.json
+        echo 'updated /usr/lib/code/product.json'
+    else
+        echo 'unsupported OS'
+    fi
+}
+
 fix-vscodium() {
     if [ $(uname) = Linux ]; then
         sudo sed -i 's#https://open-vsx.org/vscode/gallery#https://marketplace.visualstudio.com/_apis/public/gallery#; s#https://open-vsx.org/vscode/item#https://marketplace.visualstudio.com/items#' /opt//vscodium-bin/resources/app/product.json

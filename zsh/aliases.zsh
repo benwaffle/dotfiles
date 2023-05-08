@@ -17,6 +17,8 @@ alias gv='gh browse'
 alias gdm='git diff $(git_main_branch)'
 alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%S%z"'
 
+alias glow='PAGER=bat glow -p'
+
 em() {
     if [ "$#" -eq 0 ]
     then

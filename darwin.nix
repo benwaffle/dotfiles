@@ -29,6 +29,7 @@
       "keepassxc"
       "mullvadvpn"
       "nextcloud"
+      "notion"
       "rectangle"
       "slack"
       "spotify"

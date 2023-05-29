@@ -19,6 +19,7 @@
 
     casks = [
       "1password"
+      "android-studio"
       "discord"
       "element"
       "emacs-mac"

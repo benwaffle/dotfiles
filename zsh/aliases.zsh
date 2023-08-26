@@ -57,3 +57,7 @@ fix-vscodium() {
 dhcp-leases() {
   echo 'show ip dhcp binding; exit' | sshpass -p$ROUTER_PASSWORD ssh admin@192.168.1.1 -oKexAlgorithms=+diffie-hellman-group1-sha1
 }
+
+vault-unseal() {
+    op read "op://Private/Local Vault Keys/notesPlain" | rg unseal | awk '{ print $4 }' | while read key; do vault operator unseal $key; done
+}

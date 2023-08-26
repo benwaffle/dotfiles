@@ -45,7 +45,7 @@ zi snippet OMZP::asdf
 fpath=(${ASDF_DIR}/completions $fpath)
 
 zi snippet OMZP::colored-man-pages
-zi as"completion" for OMZP::docker/_docker
+zi as"completion" for OMZP::docker/completions/_docker
 zi snippet OMZP::extract
 zi snippet OMZP::fzf
 zi snippet OMZP::git

@@ -1,9 +1,9 @@
 alias cp='cp -i'
 alias mv='mv -i'
 alias df='duf'
-alias ls='exa --git'
-alias ll='exa --git -lh'
-alias la='exa --git -lah'
+alias ls='exa --icons --git'
+alias ll='exa --icons --git -lh'
+alias la='exa --icons --git -lah'
 
 alias gdb='gdb -q'
 alias myip='curl -s https://iofel.me/ip'

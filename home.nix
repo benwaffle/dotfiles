@@ -12,7 +12,7 @@
     pkgs.direnv
     pkgs.dogdns
     pkgs.duf
-    pkgs.exa
+    pkgs.eza
     pkgs.fd
     pkgs.flyctl
     pkgs.fzf

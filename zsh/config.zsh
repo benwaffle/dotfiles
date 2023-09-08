@@ -79,6 +79,7 @@ export EDITOR='nvim'
 path=(
     ~/.cargo/bin
     ~/.local/bin
+    ~/.fly/bin
     ~/go/bin
     ~/.gem/ruby/2.6.0/bin
     ~/dev/apibuilder-cli/bin

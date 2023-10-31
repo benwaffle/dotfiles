@@ -82,9 +82,7 @@ path=(
     ~/.fly/bin
     ~/go/bin
     ~/.gem/ruby/2.6.0/bin
-    ~/dev/apibuilder-cli/bin
     /usr/local/sbin
-    ~/.krew/bin
     $path
 )
 export PATH

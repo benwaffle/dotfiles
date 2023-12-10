@@ -26,7 +26,7 @@ listening() {
     fi
 }
 
-# Used for GhosTTY
+# Used for Ghostty
 
 # [Option-RightArrow] - move forward one word
 bindkey -M emacs '^[[1;3C' forward-word

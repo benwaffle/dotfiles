@@ -25,3 +25,22 @@ listening() {
         echo "Usage: listening [pattern]"
     fi
 }
+
+# Used for GhosTTY
+
+# [Option-RightArrow] - move forward one word
+bindkey -M emacs '^[[1;3C' forward-word
+bindkey -M viins '^[[1;3C' forward-word
+bindkey -M vicmd '^[[1;3C' forward-word
+# [Option-LeftArrow] - move backward one word
+bindkey -M emacs '^[[1;3D' backward-word
+bindkey -M viins '^[[1;3D' backward-word
+bindkey -M vicmd '^[[1;3D' backward-word
+# [CMD-Left] - move to start
+bindkey -M emacs "^[[1;9D" beginning-of-line
+bindkey -M viins "^[[1;9D" beginning-of-line
+bindkey -M vicmd "^[[1;9D" beginning-of-line
+# [CMD-Right] - move to end
+bindkey -M emacs "^[[1;9C" end-of-line
+bindkey -M viins "^[[1;9C" end-of-line
+bindkey -M vicmd "^[[1;9C" end-of-line

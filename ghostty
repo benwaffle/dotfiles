@@ -1,0 +1,5 @@
+keybind = ctrl+alt+r=new_split:right
+keybind = ctrl+alt+d=new_split:down
+font-family = "Operator Mono Medium"
+font-size = 11
+copy-on-select = clipboard

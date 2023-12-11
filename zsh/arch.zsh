@@ -10,5 +10,7 @@ alias up='yay && flatpak update && fwupdmgr get-updates'
 
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
+source /usr/share/doc/git-extras/git-extras-completion.zsh
+
 # for swaywm
 #export XKB_DEFAULT_OPTIONS=caps:swapescape

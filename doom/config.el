@@ -30,7 +30,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+;; (setq org-directory "~/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -54,7 +54,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(add-hook 'window-setup-hook #'treemacs 'append) ;; open treemacs on startup
+;; is this always adding ~ to workspace? that sucks
+;; (add-hook 'window-setup-hook #'treemacs 'append) ;; open treemacs on startup
 
 (setq which-key-idle-delay 0.2) ;; show shortcut autocompletion menu after 0.1sec
 
@@ -68,3 +69,14 @@
               ("TAB" . 'copilot-accept-completion)
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
+;; pixel-level smooth scrolling
+(use-package! ultra-scroll-mac
+  :init
+  (setq scroll-conservatively 101)
+  :config
+  (ultra-scroll-mac-mode 1))
+
+;; https://github.com/doomemacs/doomemacs/issues/7532
+;; fix large headerbar in emacs-mac 29
+(add-hook 'doom-after-init-hook (lambda () (tool-bar-mode 1) (tool-bar-mode 0)))

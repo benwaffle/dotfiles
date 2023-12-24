@@ -36,7 +36,7 @@
     delta.enable = true;
     extraConfig = {
       pull.rebase = true;
-      github.username = "benwaffle";
+      github.user = "benwaffle";
     };
   };
 

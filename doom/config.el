@@ -54,9 +54,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; is this always adding ~ to workspace? that sucks
-;; (add-hook 'window-setup-hook #'treemacs 'append) ;; open treemacs on startup
-
 (setq which-key-idle-delay 0.2) ;; show shortcut autocompletion menu after 0.1sec
 
 (setq projectile-project-search-path '("~/dev")) ;; where all my projects go
@@ -80,3 +77,10 @@
 ;; https://github.com/doomemacs/doomemacs/issues/7532
 ;; fix large headerbar in emacs-mac 29
 (add-hook 'doom-after-init-hook (lambda () (tool-bar-mode 1) (tool-bar-mode 0)))
+
+
+(add-hook 'window-setup-hook #'treemacs 'append) ;; open treemacs on startup
+
+;; Make treemacs only show current project
+(after! treemacs
+  (add-hook 'projectile-after-switch-project-hook #'treemacs-add-and-display-current-project-exclusively))

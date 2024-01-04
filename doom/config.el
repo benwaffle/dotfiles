@@ -69,6 +69,7 @@
 
 ;; pixel-level smooth scrolling
 (use-package! ultra-scroll-mac
+  :if (eq window-system 'mac)
   :init
   (setq scroll-conservatively 101)
   :config

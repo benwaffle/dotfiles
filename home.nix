@@ -17,12 +17,15 @@
     pkgs.flyctl
     pkgs.fzf
     pkgs.gh
+    pkgs.gore
+    pkgs.gotools
     pkgs.htop
     pkgs.jq
     pkgs.mpv
     pkgs.ncdu
     pkgs.neovim
     pkgs.ripgrep
+    pkgs.shellcheck
     pkgs.tree
     pkgs.watch
     pkgs.yt-dlp

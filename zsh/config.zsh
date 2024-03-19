@@ -44,8 +44,8 @@ zi snippet OMZL::vcs_info.zsh
 zi snippet OMZP::asdf
 fpath=(${ASDF_DIR}/completions $fpath)
 
+zi snippet OMZP::1password
 zi snippet OMZP::colored-man-pages
-zi as"completion" for OMZP::docker/completions/_docker
 zi snippet OMZP::extract
 zi snippet OMZP::fzf
 zi snippet OMZP::git
@@ -64,6 +64,8 @@ export NVM_LAZY_LOAD=true # lazy load nvm
 zi light lukechilds/zsh-nvm
 
 autoload -Uz compinit && compinit
+
+zi cdreplay -q
 
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE

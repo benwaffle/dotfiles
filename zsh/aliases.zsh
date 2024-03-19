@@ -1,6 +1,6 @@
 alias cp='cp -i'
 alias mv='mv -i'
-alias df='duf'
+alias df='duf -hide special'
 alias ls='eza --icons --git'
 alias ll='eza --icons --git -lh'
 alias la='eza --icons --git -lah'

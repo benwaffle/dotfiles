@@ -24,6 +24,7 @@
     pkgs.mpv
     pkgs.ncdu
     pkgs.neovim
+    pkgs.redis
     pkgs.ripgrep
     pkgs.shellcheck
     pkgs.tree

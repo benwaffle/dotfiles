@@ -29,7 +29,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
-      darwinConfigurations."BenIofels16MBP" = darwin.lib.darwinSystem {
+      darwinConfigurations."Bens-MBP" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [ ./darwin.nix ];
       };

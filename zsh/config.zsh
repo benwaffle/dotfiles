@@ -72,6 +72,8 @@ SAVEHIST=$HISTSIZE
 
 eval "$(zoxide init --cmd j zsh)" # the default of "zi" is already used
 
+eval "$(atuin init zsh --disable-up-arrow)"
+
 ### end
 
 source ~/dotfiles/zsh/aliases.zsh

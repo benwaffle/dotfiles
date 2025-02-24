@@ -68,12 +68,12 @@
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
 ;; pixel-level smooth scrolling
-(use-package! ultra-scroll-mac
-  :if (eq window-system 'mac)
+(use-package! ultra-scroll
   :init
-  (setq scroll-conservatively 101)
+  (setq scroll-conservatively 101
+        scroll-margin 0)
   :config
-  (ultra-scroll-mac-mode 1))
+  (ultra-scroll-mode 1))
 
 ;; https://github.com/doomemacs/doomemacs/issues/7532
 ;; fix large headerbar in emacs-mac 29

@@ -55,4 +55,4 @@ export RIPGREP_CONFIG_PATH=~/dotfiles/ripgreprc
 
 eval "$(direnv hook zsh)"
 
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(codium --locate-shell-integration-path zsh)"
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(codium --locate-shell-integration-path zsh)" || true

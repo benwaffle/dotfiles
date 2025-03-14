@@ -1,9 +1,8 @@
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
+# make node.js trust mkcert local CA
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
-
-zi wait pack for brew-completions
 
 # add curl and GNU sed to path
 export PATH="/opt/homebrew/opt/curl/bin:/opt/homebrew/opt/python@3/libexec/bin:/Users/ben/Library/Application Support/Coursier/bin:$PATH"

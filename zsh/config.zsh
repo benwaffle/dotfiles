@@ -13,13 +13,10 @@ else
     OS=$(grep "^ID=" /etc/os-release | cut -d '=' -f 2)
 fi
 
-# $ZSH_CACHE_DIR is expected by the kubectl snippet
-export ZSH_CACHE_DIR=$HOME/.cache/zi/
-
-zi_home="${HOME}/.zi"
-source "${zi_home}/bin/zi.zsh"
-autoload -Uz _zi
-(( ${+_comps} )) && _comps[zi]=_zi
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
 zi snippet OMZL::clipboard.zsh
 zi snippet OMZL::compfix.zsh
@@ -55,7 +52,7 @@ zi snippet OMZP::sudo
 zi snippet OMZP::terraform
 
 zi load zsh-users/zsh-autosuggestions
-zi load z-shell/F-Sy-H
+zi load zdharma-continuum/fast-syntax-highlighting
 
 export YSU_MESSAGE_POSITION="after"
 zi load MichaelAquilina/zsh-you-should-use

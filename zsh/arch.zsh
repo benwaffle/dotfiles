@@ -1,5 +1,5 @@
-zi snippet OMZP::archlinux
-zi snippet OMZP::command-not-found
+antigen bundle ohmyzsh/ohmyzsh path:plugins/archlinux
+antigen bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
 
 alias gov='sudo cpupower frequency-set -g'
 alias sys='sudo systemctl'

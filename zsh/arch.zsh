@@ -1,5 +1,5 @@
-antigen bundle ohmyzsh/ohmyzsh path:plugins/archlinux
-antigen bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
+antidote bundle ohmyzsh/ohmyzsh path:plugins/archlinux
+antidote bundle ohmyzsh/ohmyzsh path:plugins/command-not-found
 
 alias gov='sudo cpupower frequency-set -g'
 alias sys='sudo systemctl'

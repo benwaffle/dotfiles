@@ -19,6 +19,26 @@ alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%S%z"'
 
 alias glow='PAGER=bat glow -p'
 
+tempe () {
+  cd "$(mktemp -d)"
+  chmod -R 0700 .
+  if [[ $# -eq 1 ]]; then
+    \mkdir -p "$1"
+    cd "$1"
+    chmod -R 0700 .
+  fi
+}
+
+boop () {
+  local last="$?"
+  if [[ "$last" == '0' ]]; then
+    afplay /System/Library/Sounds/Blow.aiff &
+  else
+    afplay /System/Library/Sounds/Sosumi.aiff &
+  fi
+  $(exit "$last")
+}
+
 em() {
     if [ "$#" -eq 0 ]
     then

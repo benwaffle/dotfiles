@@ -37,6 +37,7 @@ source ~/dotfiles/zsh/aliases.zsh
 export EDITOR='nvim'
 
 path=(
+    ~/dotfiles/bin
     ~/.cargo/bin
     ~/.local/bin
     ~/.fly/bin

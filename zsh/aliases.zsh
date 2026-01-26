@@ -78,6 +78,30 @@ dhcp-leases() {
   echo 'show ip dhcp binding; exit' | sshpass -p$ROUTER_PASSWORD ssh admin@192.168.1.1 -oKexAlgorithms=+diffie-hellman-group1-sha1
 }
 
-vault-unseal() {
-    op read "op://Private/Local Vault Keys/notesPlain" | rg unseal | awk '{ print $4 }' | while read key; do vault operator unseal $key; done
+gaic() {
+  if git diff --cached --quiet; then
+    gum style --foreground 196 "no staged changes"
+    return 1
+  fi
+
+  local msg
+  msg=$(git diff --cached | llm "########################\ngenerate a concise, one-line commit message") || {
+    gum style --foreground 196 "llm failed"
+    return 1
+  }
+
+  gum style --bold "proposed commit message:"
+  echo
+  gum style --foreground 212 "$msg"
+  echo
+
+  if gum confirm "commit with this message?"; then
+    git commit -m "$msg" || {
+      gum style --foreground 196 "git commit failed"
+      return 1
+    }
+    gum style --foreground 42 "✓ committed"
+  else
+    gum style --foreground 196 "aborted"
+  fi
 }

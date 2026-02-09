@@ -19,7 +19,6 @@ SAVEHIST=$HISTSIZE
 source ~/.antidote/antidote.zsh
 
 export YSU_MESSAGE_POSITION="after" # you-should-use message
-export NVM_LAZY_LOAD=true
 antidote load ~/dotfiles/zsh/plugins.txt
 
 [[ -a ~/.zsh_private ]] && source ~/.zsh_private # secrets that can't go on github should go in this file

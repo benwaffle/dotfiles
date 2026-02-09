@@ -15,12 +15,12 @@ alias ]=open_command
 alias gpr='gh pr create -f && gh pr view -w'
 alias gv='gh browse'
 alias gdm='git diff $(git_main_branch)'
-alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%S%z"'
+alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%SZ"'
 
 alias glow='PAGER=bat glow -p'
 
 tempe () {
-  cd "$(mktemp -d)"
+  cd "$(mktemp -d -p /tmp)"
   chmod -R 0700 .
   if [[ $# -eq 1 ]]; then
     \mkdir -p "$1"

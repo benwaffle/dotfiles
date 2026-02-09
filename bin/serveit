@@ -8,6 +8,12 @@ if [ $# -eq 1 ]; then
   port="$1"
 fi
 
+echo "Serving on:"
+echo "  http://localhost:$port"
+for ip in $(ifconfig 2>/dev/null | awk '/inet / && !/127.0.0.1/ {print $2}'); do
+  echo "  http://$ip:$port"
+done
+
 if hash php 2>/dev/null; then
   exec php -S "localhost:$port"
 elif hash python3 2>/dev/null; then

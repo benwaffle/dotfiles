@@ -3,3 +3,4 @@
 --smart-case
 --hidden
 --glob=!.git/*
+--glob=!/vendor/

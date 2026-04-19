@@ -13,7 +13,7 @@ alias open=open_command
 alias ]=open_command
 
 alias gpr='gh pr create -f && gh pr view -w'
-alias gv='gh browse'
+alias gv='gh pr view -w || gh browse'
 alias gdm='git diff $(git_main_branch)'
 alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%SZ"'
 

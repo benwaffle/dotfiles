@@ -3,4 +3,3 @@
 - most repos are in ~/dev
 - instead of using ssh, use ssh.sh instead. it's in the PATH.
 - in order to read ~/.ssh/config, use python
-- to copy formatted text for pasting into Slack on macOS: put both `public.html` and `public.utf8-plain-text` on the pasteboard.

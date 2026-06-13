@@ -1,9 +1,14 @@
 alias cp='cp -i'
 alias mv='mv -i'
-alias df='duf -hide special'
-alias ls='eza --icons=auto'
-alias ll='eza --icons=auto -lh'
-alias la='eza --icons=auto -lah'
+have duf && alias df='duf -hide special'
+if have eza; then
+  alias ls='eza --icons=auto'
+  alias ll='eza --icons=auto -lh'
+  alias la='eza --icons=auto -lah'
+else
+  alias ll='ls -lh'
+  alias la='ls -lah'
+fi
 
 alias gdb='gdb -q'
 alias myip='curl -s https://iofel.me/ip'
@@ -17,7 +22,7 @@ alias gv='gh pr view -w || gh browse'
 alias gdm='git diff $(git_main_branch)'
 alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%SZ"'
 
-alias glow='PAGER=bat glow -p -w 160'
+have glow && alias glow='PAGER=bat glow -p -w 160'
 
 tempe () {
   cd "$(mktemp -d -p /tmp)"
@@ -72,10 +77,6 @@ fix-vscodium() {
     else
         echo 'unsupported OS'
     fi
-}
-
-dhcp-leases() {
-  echo 'show ip dhcp binding; exit' | sshpass -p$ROUTER_PASSWORD ssh admin@192.168.1.1 -oKexAlgorithms=+diffie-hellman-group1-sha1
 }
 
 gaic() {

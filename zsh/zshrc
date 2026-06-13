@@ -16,6 +16,11 @@ fi
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 
+# --- portable helpers (defined before macos.zsh / aliases.zsh, which use them) ---
+typeset -U path PATH                # keep PATH duplicate-free automatically
+have() { (( $+commands[$1] )) }     # have <cmd>: true if the command is installed
+add_path() { local d; for d in "$@"; do [[ -d $d ]] && path=("$d" $path); done }  # prepend existing dirs
+
 source ~/.antidote/antidote.zsh
 
 export YSU_MESSAGE_POSITION="after" # you-should-use message
@@ -24,8 +29,8 @@ antidote load ~/dotfiles/zsh/plugins.txt
 [[ -a ~/.zsh_private ]] && source ~/.zsh_private # secrets that can't go on github should go in this file
 [[ -a ~/dotfiles/zsh/$OS.zsh ]] && source ~/dotfiles/zsh/$OS.zsh # OS-specific config should go in e.g. macos.zsh or arch.zsh
 
-~/.fly/bin/fly completion zsh 2> /dev/null >| "$ZSH_CACHE_DIR/completions/_fly" &|
-~/.fly/bin/flyctl completion zsh 2> /dev/null >| "$ZSH_CACHE_DIR/completions/_flyctl" &|
+[[ -x ~/.fly/bin/fly ]] && ~/.fly/bin/fly completion zsh 2> /dev/null >| "$ZSH_CACHE_DIR/completions/_fly" &|
+[[ -x ~/.fly/bin/flyctl ]] && ~/.fly/bin/flyctl completion zsh 2> /dev/null >| "$ZSH_CACHE_DIR/completions/_flyctl" &|
 
 eval "$(zoxide init --cmd j zsh)"
 
@@ -35,16 +40,7 @@ source ~/dotfiles/zsh/aliases.zsh
 
 export EDITOR='nvim'
 
-path=(
-    ~/dotfiles/bin
-    ~/.cargo/bin
-    ~/.local/bin
-    ~/.fly/bin
-    ~/go/bin
-    ~/.gem/ruby/2.6.0/bin
-    /usr/local/sbin
-    $path
-)
+add_path ~/dotfiles/bin ~/.cargo/bin ~/.local/bin ~/.fly/bin ~/go/bin ~/.gem/ruby/2.6.0/bin /usr/local/sbin /opt/homebrew/opt/rustup/bin
 export PATH
 
 export LESS=-RXF
@@ -56,3 +52,5 @@ export RIPGREP_CONFIG_PATH=~/dotfiles/ripgreprc
 eval "$(direnv hook zsh)"
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(codium --locate-shell-integration-path zsh)" || true
+
+[[ -e ~/.iterm2_shell_integration.zsh ]] && source ~/.iterm2_shell_integration.zsh

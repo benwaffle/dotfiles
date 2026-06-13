@@ -6,25 +6,14 @@ export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 # make node.js trust mkcert local CA
 # export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
-# add curl and GNU sed to path
-export PATH="/opt/homebrew/opt/curl/bin:/opt/homebrew/opt/python@3/libexec/bin:/opt/homebrew/bin:/Users/ben/Library/Application Support/Coursier/bin:$PATH"
-export PATH="$PATH:/Users/ben/.lmstudio/bin"
+# brew tools + extras (add_path skips dirs that don't exist on this machine)
+add_path /opt/homebrew/bin /opt/homebrew/opt/curl/bin /opt/homebrew/opt/python@3/libexec/bin "$HOME/Library/Application Support/Coursier/bin" "$HOME/.lmstudio/bin"
 
 alias -s app='open -a' # run .app files just like executables
 
 alias bup='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-
-[ -e ~/.iterm2_shell_integration.zsh ] && . ~/.iterm2_shell_integration.zsh
-
-# pnpm
-export PNPM_HOME="/Users/ben/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 listening() {
     if [ $# -eq 0 ]; then

@@ -1,0 +1,11 @@
+# style name or JSON path (default "auto")
+style: "auto"
+# mouse support (TUI-mode only)
+mouse: true
+# use pager to display markdown
+pager: false
+# word-wrap at width; the TUI clamps this to the terminal width, so a large
+# value means full-width rendering
+width: 800
+# show all files, including hidden and ignored.
+all: false

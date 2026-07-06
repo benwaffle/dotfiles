@@ -22,7 +22,7 @@ alias gv='gh pr view -w || gh browse'
 alias gdm='git diff $(git_main_branch)'
 alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%SZ"'
 
-have glow && alias glow='PAGER=bat glow -p -w 160'
+have glow && alias glow='glow -t --config ~/dotfiles/glow.yml'
 
 tempe () {
   cd "$(mktemp -d -p /tmp)"

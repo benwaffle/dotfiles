@@ -18,7 +18,6 @@ SAVEHIST=$HISTSIZE
 
 # --- portable helpers (defined before macos.zsh / aliases.zsh, which use them) ---
 typeset -U path PATH                # keep PATH duplicate-free automatically
-have() { (( $+commands[$1] )) }     # have <cmd>: true if the command is installed
 add_path() { local d; for d in "$@"; do [[ -d $d ]] && path=("$d" $path); done }  # prepend existing dirs
 
 source ~/.antidote/antidote.zsh
@@ -40,7 +39,15 @@ source ~/dotfiles/zsh/aliases.zsh
 
 export EDITOR='nvim'
 
-add_path ~/dotfiles/bin ~/.cargo/bin ~/.local/bin ~/.fly/bin ~/go/bin ~/.gem/ruby/2.6.0/bin /usr/local/sbin /opt/homebrew/opt/rustup/bin
+add_path \
+    ~/dotfiles/bin \
+    ~/.cargo/bin \
+    ~/.local/bin \
+    ~/.fly/bin \
+    ~/go/bin \
+    ~/.gem/ruby/2.6.0/bin \
+    /usr/local/sbin \
+    /opt/homebrew/opt/rustup/bin
 export PATH
 
 export LESS=-RXF

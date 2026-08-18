@@ -1,7 +1,7 @@
 alias cp='cp -i'
 alias mv='mv -i'
-have duf && alias df='duf -hide special'
-if have eza; then
+(( $+commands[duf] )) && alias df='duf -hide special'
+if (( $+commands[eza] )); then
   alias ls='eza --icons=auto'
   alias ll='eza --icons=auto -lh'
   alias la='eza --icons=auto -lah'
@@ -22,7 +22,7 @@ alias gv='gh pr view -w || gh browse'
 alias gdm='git diff $(git_main_branch)'
 alias utc='TZ=UTC date "+%Y-%m-%dT%H:%M:%SZ"'
 
-have glow && alias glow='glow -t --config ~/dotfiles/glow.yml'
+(( $+commands[glow] )) && alias glow='glow -t --config ~/dotfiles/glow.yml'
 
 tempe () {
   cd "$(mktemp -d -p /tmp)"

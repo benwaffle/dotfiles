@@ -1,4 +1,5 @@
-fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+# brew PATH (bin+sbin), fpath, HOMEBREW_* vars, MANPATH/INFOPATH
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export HOMEBREW_NO_ANALYTICS=1
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
@@ -6,8 +7,12 @@ export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 # make node.js trust mkcert local CA
 # export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 
-# brew tools + extras (add_path skips dirs that don't exist on this machine)
-add_path /opt/homebrew/bin /opt/homebrew/opt/curl/bin /opt/homebrew/opt/python@3/libexec/bin "$HOME/Library/Application Support/Coursier/bin" "$HOME/.lmstudio/bin"
+# keg-only brew tools + extras (add_path skips dirs that don't exist on this machine)
+add_path \
+    /opt/homebrew/opt/curl/bin \
+    /opt/homebrew/opt/python@3/libexec/bin \
+    "$HOME/Library/Application Support/Coursier/bin" \
+    "$HOME/.lmstudio/bin"
 
 alias -s app='open -a' # run .app files just like executables
 
